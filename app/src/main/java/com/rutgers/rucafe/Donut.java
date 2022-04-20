@@ -32,6 +32,10 @@ public class Donut extends MenuItem {
     public static final double CAKE_PRICE = 1.79;
     public static final double HOLE_PRICE = 0.39;
 
+    private int image;
+
+    public int getImage(){return image;}
+
     /**
      * Constructs a Donut Object given Strings
      * that represent the Donut's Type and Flavor
@@ -40,9 +44,10 @@ public class Donut extends MenuItem {
      *
      * @param donutFlavor String representing the Flavor of the Donut Object
      */
-    public Donut(String donutType, String donutFlavor){
+    public Donut(String donutType, String donutFlavor, int image){
         type = donutType;
         flavor = donutFlavor;
+        image = image;
     }
 
     /**
