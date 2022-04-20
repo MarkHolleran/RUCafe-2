@@ -1,4 +1,6 @@
 package com.rutgers.rucafe;
+import java.util.ArrayList;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -18,12 +20,12 @@ public class Order implements Customizable {
 
     public static final double TAX_MULTIPLIER = 1.06625;
     private int orderNumber;
-    private ObservableList<MenuItem> orderForListView;
+    private ArrayList<MenuItem> order;
 
     /**
      * Default Order Object Constructor
      */
-    public Order() { orderForListView = FXCollections.observableArrayList();}
+    public Order() { order = new  ArrayList<MenuItem>();}
 
     /**
      * Adds a MenuItem Object to the ObservableList of MenuItems of the Order Object
@@ -33,7 +35,7 @@ public class Order implements Customizable {
      */
     public boolean add(Object obj) {
         if (obj instanceof MenuItem item) {
-            orderForListView.add(item);
+            order.add(item);
             return true;
         }
         return false;
@@ -47,7 +49,7 @@ public class Order implements Customizable {
      */
     public boolean remove(Object obj) {
         if (obj instanceof MenuItem item) {
-            orderForListView.remove(item);
+            order.remove(item);
             return true;
         }
         return false;
@@ -60,7 +62,7 @@ public class Order implements Customizable {
      */
     public double orderPrice() {
         double sum = 0;
-        for (MenuItem item : orderForListView) {
+        for (MenuItem item : order) {
             sum += item.itemPrice() * item.getQuantity();
         }
         return sum;
@@ -80,8 +82,8 @@ public class Order implements Customizable {
      *
      * @return ObservableList containing MenuItems
      */
-    public ObservableList<MenuItem> getOrder() {
-        return orderForListView;
+    public ArrayList<MenuItem> getOrder() {
+        return order;
     }
 
     /**
@@ -101,6 +103,6 @@ public class Order implements Customizable {
      * it's ObservableList
      */
     public String toString() {
-        return orderNumber + " " + orderForListView.toString();
+        return orderNumber + " " + order.toString();
     }
 }
