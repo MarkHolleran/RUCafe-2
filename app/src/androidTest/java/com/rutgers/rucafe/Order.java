@@ -1,9 +1,6 @@
 package com.rutgers.rucafe;
 import java.util.ArrayList;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 /**
  * Class that represents an Order Object
  *
@@ -34,8 +31,8 @@ public class Order implements Customizable {
      * @return True if MenuItem Object is added, false otherwise
      */
     public boolean add(Object obj) {
-        if (obj instanceof MenuItem item) {
-            order.add(item);
+        if (obj instanceof MenuItem ) {
+            order.add((MenuItem)obj);
             return true;
         }
         return false;
@@ -48,8 +45,8 @@ public class Order implements Customizable {
      * @return True if MenuItem Object is removed, false otherwise
      */
     public boolean remove(Object obj) {
-        if (obj instanceof MenuItem item) {
-            order.remove(item);
+        if (obj instanceof MenuItem) {
+            order.remove((MenuItem) obj);
             return true;
         }
         return false;

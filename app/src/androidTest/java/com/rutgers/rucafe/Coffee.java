@@ -50,12 +50,18 @@ public class Coffee extends MenuItem implements Customizable {
      */
     @Override
     public double itemPrice() {
-        switch (size) {
-            case SHORT -> this.setItemPrice(PRICE_OF_SIZE_SHORT);
-            case TALL -> this.setItemPrice(PRICE_OF_SIZE_TALL);
-            case GRANDE -> this.setItemPrice(PRICE_OF_SIZE_GRANDE);
-            case VENTI -> this.setItemPrice(PRICE_OF_SIZE_VENTI);
+
+        if (size.equals(SHORT)){
+            this.setItemPrice(PRICE_OF_SIZE_SHORT);
+
+        }else if (size.equals(TALL)){
+            this.setItemPrice(PRICE_OF_SIZE_TALL);
+        }else if (size.equals(GRANDE)){
+            this.setItemPrice(PRICE_OF_SIZE_GRANDE);
+        }else if (size.equals((VENTI))){
+            this.setItemPrice(PRICE_OF_SIZE_VENTI);
         }
+
         return super.itemPrice() + (addins.size() * PRICE_OF_SINGLE_ADDIN);
     }
 
@@ -84,8 +90,8 @@ public class Coffee extends MenuItem implements Customizable {
      * @return True if successfully added, false otherwise
      */
     public boolean add(Object obj) {
-        if (obj instanceof String topping) {
-            addins.add(topping);
+        if (obj instanceof String ) {
+            addins.add((String)obj);
             return true;
         }
         return false;
@@ -98,8 +104,8 @@ public class Coffee extends MenuItem implements Customizable {
      * @return True if successfully removed, false otherwise
      */
     public boolean remove(Object obj) {
-        if (obj instanceof String topping) {
-            addins.remove(topping);
+        if (obj instanceof String ) {
+            addins.remove((String)obj);
             return true;
         }
         return false;

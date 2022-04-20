@@ -52,10 +52,13 @@ public class Donut extends MenuItem {
      */
     @Override
     public double itemPrice(){
-        switch (type) {
-            case YEAST -> setItemPrice(YEAST_PRICE);
-            case CAKE -> setItemPrice(CAKE_PRICE);
-            case HOLE -> setItemPrice(HOLE_PRICE);
+
+        if (type.equals(YEAST)){
+            this.setItemPrice(YEAST_PRICE);
+        }else if (type.equals(CAKE)){
+            this.setItemPrice(CAKE_PRICE);
+        }else if (type.equals(HOLE)){
+            this.setItemPrice(HOLE_PRICE);
         }
         return super.itemPrice();
     }
