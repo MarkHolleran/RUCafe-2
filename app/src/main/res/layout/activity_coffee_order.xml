@@ -6,4 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".coffee_order">
 
+    <RadioButton
+        android:id="@+id/yeastButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="@string/yeast_donut"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <RadioButton
+        android:id="@+id/cakeButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="Cake Donut"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <RadioButton
+        android:id="@+id/holeButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="Donut Hole"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="347dp"
+        android:layout_height="252dp"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="202dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
