@@ -1,6 +1,5 @@
 package com.rutgers.rucafe;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.util.ArrayList;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +16,7 @@ import java.io.IOException;
  */
 public class StoreOrders implements Customizable {
 
-    private final ObservableList<Order> orders;
+    private final ArrayList<Order> orders;
 
     /**
      * Default constructor for creating a StoreOrders Object
@@ -62,7 +61,7 @@ public class StoreOrders implements Customizable {
      *
      * @return ObservableList of Order Objects
      */
-    public ObservableList<Order> getOrderList() {
+    public ArrayList<Order> getOrderList() {
         return this.orders;
     }
 
