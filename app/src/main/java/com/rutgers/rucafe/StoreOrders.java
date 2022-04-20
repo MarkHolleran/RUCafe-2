@@ -1,9 +1,9 @@
 package com.rutgers.rucafe;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Class that represents a StoreOrders Object
@@ -17,13 +17,13 @@ import java.io.IOException;
  */
 public class StoreOrders implements Customizable {
 
-    private final ObservableList<Order> orders;
+    private final ArrayList<Order> orders;
 
     /**
      * Default constructor for creating a StoreOrders Object
      */
     public StoreOrders() {
-        orders = FXCollections.observableArrayList();
+        orders = new ArrayList<Order>();
     }
 
     /**
@@ -35,8 +35,8 @@ public class StoreOrders implements Customizable {
     @Override
     public boolean add(Object obj) {
 
-        if (obj instanceof Order order) {
-            orders.add(order);
+        if (obj instanceof Order) {
+            orders.add((Order)obj);
             return true;
         }
         return false;
@@ -50,8 +50,8 @@ public class StoreOrders implements Customizable {
      */
     public boolean remove(Object obj) {
 
-        if (obj instanceof Order order) {
-            orders.remove(order);
+        if (obj instanceof Order) {
+            orders.remove((Order)obj);
             return true;
         }
         return false;
@@ -62,7 +62,7 @@ public class StoreOrders implements Customizable {
      *
      * @return ObservableList of Order Objects
      */
-    public ObservableList<Order> getOrderList() {
+    public ArrayList<Order> getOrderList() {
         return this.orders;
     }
 
