@@ -36,7 +36,9 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.ItemsHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemsAdaper.ItemsHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemsHolder holder, int position) {
+
+        holder.
 
     }
 
