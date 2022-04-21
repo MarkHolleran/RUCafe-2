@@ -14,6 +14,6 @@ public class donut_order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donut_order);
 
-        addButton = findViewById(R.id.btn_add);
+        addButton = findViewById(R.id.donutAdd);
     }
 }

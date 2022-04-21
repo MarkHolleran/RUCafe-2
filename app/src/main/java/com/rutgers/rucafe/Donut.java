@@ -7,7 +7,7 @@ package com.rutgers.rucafe;
  *
  * @author Mark Holleran, Abhitej Bokka
  */
-public class Donut extends MenuItem {
+public class Donut extends MenuItem  {
 
     private String flavor;
     private String type;

@@ -22,27 +22,28 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        app:layout_constraintBottom_toTopOf="@+id/OrderDonutButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/OrderCoffeeButton"
-        android:layout_width="120"
-        android:layout_height="80"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="68dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="56dp"
         android:text="Order Coffee"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/AllOrdersButton"
-        android:layout_width="120"
-        android:layout_height="80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="60dp"
         android:text="All Orders"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,29 +63,30 @@
 
     <Button
         android:id="@+id/OrderDonutButton"
-        android:layout_width="120"
-        android:layout_height="80"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="252dp"
         android:text="Order Donut"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        app:layout_constraintBottom_toTopOf="@+id/OrderCoffeeButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/CurrentOrderButton"
-        android:layout_width="120"
-        android:layout_height="80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Current Order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/AllOrdersButton"

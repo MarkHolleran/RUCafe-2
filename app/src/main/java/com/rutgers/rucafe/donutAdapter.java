@@ -22,9 +22,9 @@ import java.util.ArrayList;
 
 class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
     private Context context;
-    private ArrayList<MenuItem> donuts; //need the data binding to each row of recyclerview
+    private ArrayList<Donut> donuts; //need the data binding to each row of recyclerview
 
-    public donutAdapter(Context context, ArrayList<MenuItem> donuts){
+    public donutAdapter(Context context, ArrayList<Donut> donuts){
         this.context = context;
         this.donuts = donuts;
     }
@@ -46,7 +46,12 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
     @Override
     public void onBindViewHolder(@NonNull donutHolder holder, int position) {
 
-        holder.donutName.setText(donuts.get(position).getItemName());
+        holder.donutName.setText(donuts.get(position).getFlavor());
+        double d = donuts.get(position).itemPrice();
+        String s = String.valueOf(d);
+        holder.donutPrice.setText(s);
+        holder.donutImage.setImageResource(donuts.get(position).getImage());
+
 
     }
 

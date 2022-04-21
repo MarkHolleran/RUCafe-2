@@ -9,8 +9,7 @@
 
 
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
     <string name="yeast_donut">Yeast Donut</string>
     
     <string-array name="coffee_sizes">
@@ -18,5 +17,35 @@
         <item>Tall</item>
         <item>Grande</item>
         <item>Venti</item>
+    </string-array>
+
+    <string-array name="donut_names">
+        <item>Double Chocolate</item>
+        <item>Jelly Filled</item>
+        <item>Oreo</item>
+        <item>French</item>
+        <item>Red Velvet</item>
+        <item>Powdered Sugar</item>
+        <item>Baked Jelly</item>
+        <item>Boston Cream</item>
+        <item>Chocolate</item>
+        <item>Strawberry</item>
+        <item>Cinnamon</item>
+        <item>Coconut</item>
+    </string-array>
+
+    <string-array name="donut_types">
+        <item>Yeast Donut</item>
+        <item>Yeast Donut</item>
+        <item>Yeast Donut</item>
+        <item>Yeast Donut</item>
+        <item>Cake Donut</item>
+        <item>Cake Donut</item>
+        <item>Cake Donut</item>
+        <item>Cake Donut</item>
+        <item>Donut Hole</item>
+        <item>Donut Hole</item>
+        <item>Donut Hole</item>
+        <item>Donut Hole</item>
     </string-array>
 </resources>
