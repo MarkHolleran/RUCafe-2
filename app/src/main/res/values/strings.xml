@@ -10,7 +10,17 @@
 
     <string name="yeast_donut">Yeast Donut</string>
 
-    <string-array name="coffee_sizes">
+        <string name="shortCoffee">Short</string>
+        <string name="tallCoffee">Tall</string>
+        <string name="grandeCoffee">Grande</string>
+        <string name="ventiCoffee">Venti</string>
+        <string name="creamCoffee">Cream</string>
+        <string name="syrupCoffee">Syrup</string>
+        <string name="caramelCoffee">Caramel</string>
+        <string name="whippedCreamCoffee">Whipped Cream</string>
+
+
+    <string-array name="coffeeSizes">
         <item>Short</item>
         <item>Tall</item>
         <item>Grande</item>

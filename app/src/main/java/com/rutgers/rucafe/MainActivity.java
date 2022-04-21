@@ -20,15 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.allStoreOrdersButton = findViewById(R.id.AllOrdersButton);
-        allStoreOrdersButton.setOnClickListener(new View.OnClickListener(){
 
-            @Override
-            public  void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, test.class);
-                startActivity(intent);
-            }
-        });
         this.donutOrderButton = findViewById(R.id.OrderDonutButton);
         donutOrderButton.setOnClickListener(new View.OnClickListener(){
 
