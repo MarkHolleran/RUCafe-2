@@ -10,23 +10,56 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
+    private Button donutOrderButton;
+    private Button allStoreOrdersButton;
+    private Button coffeeOrderButton;
+    private Button currentOrderButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.button = findViewById(R.id.OrderDonutButton);
-        button.setOnClickListener(new View.OnClickListener(){
+        this.allStoreOrdersButton = findViewById(R.id.AllOrdersButton);
+        allStoreOrdersButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public  void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, test.class);
+                startActivity(intent);
+            }
+        });
+        this.donutOrderButton = findViewById(R.id.OrderDonutButton);
+        donutOrderButton.setOnClickListener(new View.OnClickListener(){
+
 
             @Override
             public void onClick(View v){
-
                 startActivity(new Intent(MainActivity.this, DonutActivity.class));
-
             }
         });
+
+        this.coffeeOrderButton = findViewById(R.id.OrderCoffeeButton);
+        coffeeOrderButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public  void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, coffee_order.class);
+                startActivity(intent);
+            }
+        });
+
+        this.currentOrderButton = findViewById(R.id.CurrentOrderButton);
+        currentOrderButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public  void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, current_order.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }

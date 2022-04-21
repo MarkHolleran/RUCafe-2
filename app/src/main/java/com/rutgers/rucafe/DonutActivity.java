@@ -19,7 +19,7 @@ public class DonutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_donut_order);
         RecyclerView rcview = findViewById(R.id.rcView_menu);
         setupMenuItems();
         donutAdapter adapter = new donutAdapter(this,donuts);
@@ -37,7 +37,8 @@ public class DonutActivity extends AppCompatActivity {
          * data sources.
          */
         for (int i = 0; i < donutNames.length; i++) {
-            donuts.add(new Donut(donutNames[i] ,donutNames[i]  ,donutImages[i] ));
+            donuts.add(new Donut(donutNames[i] ,donutTypes[i]  ,donutImages[i] ));
+            //
         }
     }
 
