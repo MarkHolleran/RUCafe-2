@@ -6,64 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".coffee_order">
 
-    <Spinner
-        android:id="@+id/spinnerCoffee"
-        android:layout_width="136dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="43dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioButton
+    <CheckBox
         android:id="@+id/creamCoffee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="121dp"
+        android:layout_width="85dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="120dp"
         android:text="@string/creamCoffee"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
-        android:id="@+id/caramelCoffee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="187dp"
-        android:text="@string/caramelCoffee"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioButton
+    <CheckBox
         android:id="@+id/syrupCoffee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="214dp"
-        android:layout_marginTop="121dp"
+        android:layout_width="132dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="120dp"
         android:text="@string/syrupCoffee"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
+    <CheckBox
+        android:id="@+id/caramelCoffee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="188dp"
+        android:text="@string/caramelCoffee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
         android:id="@+id/whippedCreamCoffee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="214dp"
-        android:layout_marginTop="187dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="188dp"
         android:text="@string/whippedCreamCoffee"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="174dp"
-        android:layout_marginTop="335dp"
-        android:text="TextView"
+    <Spinner
+        android:id="@+id/spinnerCoffee"
+        android:layout_width="136dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="44dp"
+        android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/coffeeListView"
+        android:layout_width="381dp"
+        android:layout_height="238dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="136dp"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="62dp"
+        android:text="@string/Add"
+        app:layout_constraintBottom_toTopOf="@+id/coffeeListView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whippedCreamCoffee"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SubTotal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coffeeListView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

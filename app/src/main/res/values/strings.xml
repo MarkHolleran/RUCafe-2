@@ -27,6 +27,9 @@
         <item>Venti</item>
     </string-array>
 
+    <string name="Add">Add</string>
+    <string name="SubTotal">TextView</string>
+
     <string-array name="donut_names">
         <item>Double Chocolate</item>
         <item>Jelly Filled</item>
