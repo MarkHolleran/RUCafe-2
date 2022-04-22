@@ -26,7 +26,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     public static final int INITIAL_QUANTITY = 1;
 
     private RecyclerView coffeeList;
-    private RecyclerView.Adapter coffeeAdapter;
+    private coffeeAdapt coffeeAdapter;
     private RecyclerView.LayoutManager coffeeLayout;
 
     private Button addButton;
@@ -71,15 +71,20 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
                 for(MenuItem items: coffeeOrders.getOrder()){
                     sum += items.itemPrice();
                 }
-
-
                 subtotal.setText(String.format("$"+"%.2f", coffeeOrders.orderPrice()));
-
-
                 coffeeAdapter.notifyDataSetChanged();
             }
         });
 
+    }
+
+    private void updateBalance(){
+        double sum = 0;
+        for(MenuItem items: coffeeOrders.getOrder()){
+            sum += items.itemPrice();
+        }
+        subtotal.setText(String.format("$"+"%.2f", coffeeOrders.orderPrice()));
+        coffeeAdapter.notifyDataSetChanged();
     }
 
     public void addItem(){
@@ -138,6 +143,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     public void removeItem(int position) {
         coffeeOrders.getOrder().remove(position);
         coffeeAdapter.notifyItemRemoved(position);
+        updateBalance();
     }
 
     public void createViews(){
@@ -156,12 +162,12 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         coffeeList.setLayoutManager(coffeeLayout);
         coffeeList.setAdapter(coffeeAdapter);
 
-//        coffeeAdapter.setOnItemClickListener(new CoffeeAdapt.OnItemClickListener() {
-//            @Override
-//            public void onDeleteClick(int position) {
-//                removeItem(position);
-//            }
-//        });
+        coffeeAdapter.setOnItemClickListener(new coffeeAdapt.OnItemClickListener() {
+            @Override
+            public void onDeleteClick(int position) {
+                removeItem(position);
+            }
+        });
     }
 
     @Override

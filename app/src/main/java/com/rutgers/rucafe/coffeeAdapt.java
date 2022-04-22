@@ -18,6 +18,8 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
 
     public interface OnItemClickListener {
 
+        //void onItemClick(int position);
+
         void onDeleteClick(int position);
     }
 
@@ -31,10 +33,22 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
         public TextView textView;
         public ImageView deleteImage;
 
-        public coffeeViewHolder(View itemView, final OnItemClickListener listener) {
+        public coffeeViewHolder(View itemView, OnItemClickListener listener) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
             deleteImage = itemView.findViewById(R.id.deleteButton);
+
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    if (listener != null) {
+//                        int position = getAdapterPosition();
+//                        if (position != RecyclerView.NO_POSITION) {
+//                            listener.onDeleteClick(position);
+//                        }
+//                    }
+//                }
+//            });
 
             deleteImage.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -58,8 +72,8 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
     @Override
     public coffeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View viewss = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
-        coffeeViewHolder coffeeViewHolder = new coffeeViewHolder(viewss, listener);
-        return coffeeViewHolder;
+        coffeeViewHolder cViewHolder = new coffeeViewHolder(viewss, listener);
+        return cViewHolder;
     }
 
     @Override
