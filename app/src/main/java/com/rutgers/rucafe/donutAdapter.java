@@ -22,14 +22,13 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
     private Context context;
     private ArrayList<Donut> donuts; //need the data binding to each row of recyclerview
 
+    public static String donutFlavorInFocus;
+    public static String donutTypeInFocus;
+
     public donutAdapter(Context context, ArrayList<Donut> donuts){
         this.context = context;
         this.donuts = donuts;
     }
-
-
-
-
 
     @NonNull
     @Override
@@ -86,7 +85,11 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
                     public void onClick(View view){
                     Intent intent = new Intent(donutView.getContext(), donutSelectedActivity.class);
                     intent.putExtra("DONUT", donutPrice.getText());
+                    intent.putExtra("DONUTTYPESELECTED", donutType.getText());
+                    intent.putExtra("DONUTFLAVORSELECTED", donutFlavor.getText());
                     donutView.getContext().startActivity(intent);
+
+
 
             }
 
