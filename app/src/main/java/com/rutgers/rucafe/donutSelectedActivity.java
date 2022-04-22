@@ -14,7 +14,7 @@ public class donutSelectedActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donut_selected);
-        btn_donutName = findViewById(R.id.btn1);
+        btn_donutName = findViewById(R.id.beep);
         Intent intent = getIntent();
         btn_donutName.setText(intent.getStringExtra("DONUT"));
     }
