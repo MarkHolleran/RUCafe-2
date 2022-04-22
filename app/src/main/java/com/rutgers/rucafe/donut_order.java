@@ -30,14 +30,14 @@ public class donut_order extends AppCompatActivity {
 
     private void setupMenuItems() {
 
-        String [] donutNames = getResources().getStringArray(R.array.donut_names);
+        String [] donutFlavors = getResources().getStringArray(R.array.donut_names);
         String [] donutTypes = getResources().getStringArray(R.array.donut_types);
         /* Add the items to the ArrayList.
          * Note that I use hardcoded prices for demo purpose. This should be replace by other
          * data sources.
          */
-        for (int i = 0; i < donutNames.length; i++) {
-            donuts.add(new Donut(donutNames[i] ,donutTypes[i]  ,donutImages[i] ));
+        for (int i = 0; i < donutFlavors.length; i++) {
+            donuts.add(new Donut(donutTypes[i] ,donutFlavors[i]  ,donutImages[i] ));
             //
         }
     }

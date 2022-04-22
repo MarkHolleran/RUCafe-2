@@ -8,13 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class donutSelectedActivity extends AppCompatActivity {
     private Button btn_donutName;
-
+    // add to order button
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donut_selected);
-        btn_donutName = findViewById(R.id.beep);
+        btn_donutName = findViewById(R.id.addDonutToOrderButton);
         Intent intent = getIntent();
         btn_donutName.setText(intent.getStringExtra("DONUT"));
     }
