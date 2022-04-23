@@ -76,7 +76,7 @@ public class current_order extends AppCompatActivity {
     public void removeItem(int position) {
 
         if(allOrders.getOrder().get(position) instanceof Donut){
-            //donut_order.donutOrders.remove(allOrders.getOrder().get(position));
+            donut_order.donutOrder.remove(allOrders.getOrder().get(position));
         }else{
             coffee_order.coffeeOrders.remove(allOrders.getOrder().get(position));
         }
@@ -133,7 +133,7 @@ public class current_order extends AppCompatActivity {
     public ArrayList<MenuItem> updateAllOrders() {
         allOrders = new Order();
         allOrders.getOrder().addAll(coffee_order.coffeeOrders.getOrder());
-        //allOrders.getOrder().addAll(donut_order.donutOrders().getOrder());
+        allOrders.getOrder().addAll(donut_order.donutOrder.getOrder());
         return this.allOrders.getOrder();
     }
 }
