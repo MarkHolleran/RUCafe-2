@@ -136,6 +136,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
 
     public void removeItem(int position) {
         coffeeOrders.getOrder().remove(position);
+
         coffeeAdapter.notifyItemRemoved(position);
         updateBalance();
     }

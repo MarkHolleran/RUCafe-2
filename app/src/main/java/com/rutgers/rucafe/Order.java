@@ -102,4 +102,11 @@ public class Order implements Customizable {
     public String toString() {
         return orderNumber + " " + order.toString();
     }
+
+    public String toStringWithoutOrderNumber (){
+
+        return order.toString();
+
+
+    }
 }

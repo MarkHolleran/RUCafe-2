@@ -37,6 +37,9 @@ public class donut_order extends AppCompatActivity {
         setContentView(R.layout.activity_donut_order);
         RecyclerView rcview = findViewById(R.id.rcView_menu);
         setupMenuItems();
+        donutOrderRecyclerView = findViewById(R.id.donutListView);
+        donutOrderRecyclerView.setHasFixedSize(true);
+        donutLayout = new LinearLayoutManager(this);
 
 
         donutOrderSubtotal = findViewById(R.id.donutOrderSubtotal);
@@ -52,18 +55,30 @@ public class donut_order extends AppCompatActivity {
         //subTotalName.setText("Sub Total:");
 
 
+
+
+    }
+@Override
+    public void onResume(){
+       super.onResume();
+        updateBalance();
+        // put your code here...
+
     }
 
-    private void updateBalance(){
+    public void updateBalance(){
 
-        double sum = 0;
-        for (MenuItem items: donutOrder.getOrder()){
+        if (donutOrder.getOrder().size() != 0) {
 
-            sum+= items.itemPrice();
+            double sum = 0;
+            for (MenuItem items : donutOrder.getOrder()) {
 
+                sum += items.itemPrice();
+
+            }
+            donutOrderSubtotal.setText(String.format("$" + "%.2f", donutOrder.orderPrice()));
+            //donutAdapter.notifyDataSetChanged();
         }
-        donutOrderSubtotal.setText(String.format("$"+"%.2f", donutOrder.orderPrice()));
-        //donutAdapter.notifyDataSetChanged();
 
     }
 
@@ -93,7 +108,7 @@ public class donut_order extends AppCompatActivity {
     public void removeItem(int position) {
         donutOrder.getOrder().remove(position);
         donutAdapter.notifyItemRemoved(position);
-        updateBalance();
+        //updateBalance();
     }
 
     public void onDeleteClick(int position){removeItem(position);}

@@ -66,7 +66,11 @@ public class donutSelectedActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int which) {
 
                         addItem();
-                        Toast.makeText(itemView.getContext(), newDonut.toString() + " added.",Toast.LENGTH_LONG).show();
+                        Toast.makeText(itemView.getContext(), newDonut.toString() + " added." ,Toast.LENGTH_LONG).show();
+
+
+                        //donut_order.updateBalance();
+
 
 
 
@@ -103,7 +107,7 @@ public class donutSelectedActivity extends AppCompatActivity {
         //int donutQuantity = donutOrderQuantity.getSelectedItemPosition();
         Donut newDonut = new Donut(getIntent().getStringExtra("DONUTTYPESELECTED"), getIntent().getStringExtra("DONUTFLAVORSELECTED"), 1);
         //newDonut.setQuantity(INITIAL_QUANTITY);
-        newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition());
+        newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+1);
         //have to work this out first
         //System.out.println(newDonut.toString());
 
@@ -119,11 +123,15 @@ public class donutSelectedActivity extends AppCompatActivity {
         }
 
         if (duplicateDonutFound == false){
-                newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition());
+                newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+1);
                 donutOrder.add(newDonut);
             }
 
-        System.out.println(donutOrder.toString());
+        System.out.println(donutOrder.toStringWithoutOrderNumber());
+        System.out.println(donutOrder.orderPrice());
+
+        donut_order.donutOrder = donutOrder;
+
     }
 
 
