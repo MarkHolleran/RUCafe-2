@@ -40,7 +40,7 @@ public class donut_order extends AppCompatActivity {
 
 
         donutOrderSubtotal = findViewById(R.id.donutOrderSubtotal);
-        subTotalName = findViewById(R.id.subTotalName);
+        subTotalName = findViewById(R.id.subTotalText);
 
         donutAdapter adapter = new donutAdapter(this,donuts);
         rcview.setAdapter(adapter);
@@ -49,7 +49,7 @@ public class donut_order extends AppCompatActivity {
         donutOrderSubtotal.setText(String.format("$"+"%.2f", donutOrder.orderPrice()));
         //donutOrderSubtotal.setText();
 
-        subTotalName.setText("Sub Total:");
+        //subTotalName.setText("Sub Total:");
 
 
     }
