@@ -41,6 +41,7 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
             deleteImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    System.out.println("CLICK" + getAdapterPosition());
                     if (listener != null) {
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {

@@ -21,13 +21,11 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
     private RecyclerView donutOrderRecyclerView;
     private donutAdapter donutAdapter;
     private RecyclerView.LayoutManager donutLayout;
-
-    private RecyclerView getDonutOrderRecyclerView;
     private coffeeAdapt coffeeAdapter;
     private RecyclerView.LayoutManager coffeeLayout;
 
     private TextView donutOrderSubtotal;
-    private TextView subTotalName;
+    //private TextView subTotalName;
 
     private ArrayList<Donut> donuts = new ArrayList<>();
 
@@ -46,7 +44,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         donutOrderRecyclerView = findViewById(R.id.donutListView);
         donutOrderRecyclerView.setHasFixedSize(true);
         donutOrderSubtotal = findViewById(R.id.donutOrderSubtotal);
-        subTotalName = findViewById(R.id.subTotalText);
+        //subTotalName = findViewById(R.id.subTotalText);
         donutLayout = new LinearLayoutManager(this);
         donutAdapter adapter = new donutAdapter(this,donuts);
         rcview.setAdapter(adapter);
@@ -64,12 +62,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         //donutOrderSubtotal.setText();
 
         //subTotalName.setText("Sub Total:");
-        coffeeAdapter.setOnItemClickListener(new coffeeAdapt.OnItemClickListener() {
-            @Override
-            public void onDeleteClick(int position) {
-                removeItem(position);
-            }
-        });
+
 
 
     }
@@ -80,20 +73,30 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         updateAllOrders();
 
 
-        // put your code here...
 
     }
-
 
     public void updateAllOrders() {
 
         coffeeAdapter = new coffeeAdapt(donutOrder.getOrder());
         donutOrderRecyclerView.setLayoutManager(donutLayout);
         donutOrderRecyclerView.setAdapter(coffeeAdapter);
+
+        coffeeAdapter.setOnItemClickListener(new coffeeAdapt.OnItemClickListener() {
+            @Override
+            public void onDeleteClick(int position) {
+                removeItem(position);
+                updateAllOrders();
+                updateBalance();
+
+                System.out.println(donutOrder.getOrder().toString());
+
+            }
+        });
     }
 
     public void updateBalance(){
-        if (donutOrder.getOrder().size() != 0) {
+
 
             double sum = 0;
             for (MenuItem items : donutOrder.getOrder()) {
@@ -101,7 +104,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
             }
             donutOrderSubtotal.setText(String.format("$" + "%.2f", donutOrder.orderPrice()));
             //donutAdapter.notifyDataSetChanged();
-        }
+
 
     }
 
@@ -128,20 +131,22 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
 
     public void removeItem(int position) {
         donutOrder.getOrder().remove(position);
-        donutAdapter.notifyItemRemoved(position);
+        coffeeAdapter.notifyItemRemoved(position);
         updateBalance();
+        updateAllOrders();
     }
 
+    //this doesn't do anything
     public void  onItemSelected(AdapterView<?> parent, View view, int position, long id){
-
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
-
 
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
 
 }
