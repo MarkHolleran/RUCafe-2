@@ -51,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        this.allStoreOrdersButton = findViewById(R.id.AllOrdersButton);
+        allStoreOrdersButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public  void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, store_orders.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 
 public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHolder> {
-    private ArrayList<MenuItem> itemArrayList;
+    private ArrayList<?> itemArrayList;
     private OnItemClickListener listener;
 
     public interface OnItemClickListener {
@@ -53,7 +53,7 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
     }
 
 
-    public coffeeAdapt(ArrayList<MenuItem> list) {
+    public coffeeAdapt(ArrayList<?> list) {
         itemArrayList = list;
     }
 
@@ -66,8 +66,8 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
 
     @Override
     public void onBindViewHolder(coffeeViewHolder holder, int position) {
-        MenuItem currentItem = itemArrayList.get(position);
-        holder.textView.setText(currentItem.toString());
+        //MenuItem currentItem = itemArrayList.get(position);
+        holder.textView.setText(itemArrayList.get(position).toString());
     }
 
     @Override

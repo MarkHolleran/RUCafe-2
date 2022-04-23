@@ -52,14 +52,13 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         rcview.setAdapter(adapter);
         rcview.setLayoutManager(new LinearLayoutManager(this));
 
+
         coffeeAdapter = new coffeeAdapt(donutOrder.getOrder());
         donutOrderRecyclerView.setLayoutManager(donutLayout);
         donutOrderRecyclerView.setAdapter(coffeeAdapter);
 
-
-
-
-
+        updateBalance();
+        //idk if needed
 
         donutOrderSubtotal.setText(String.format("$"+"%.2f", donutOrder.orderPrice()));
         //donutOrderSubtotal.setText();
@@ -95,6 +94,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
 
     public void updateBalance(){
         if (donutOrder.getOrder().size() != 0) {
+
             double sum = 0;
             for (MenuItem items : donutOrder.getOrder()) {
                 sum += items.itemPrice();
@@ -118,9 +118,10 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         for (int i = 0; i < donutFlavors.length; i++) {
             donuts.add(new Donut(donutTypes[i] ,donutFlavors[i]  ,donutImages[i] ));
         }
-
-
-
+        
+        donutOrderRecyclerView = findViewById(R.id.donutListView);
+        donutOrderRecyclerView.setHasFixedSize(true);
+        donutLayout = new LinearLayoutManager(this);
     }
 
 

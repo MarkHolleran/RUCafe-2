@@ -27,13 +27,17 @@
         <item>Venti</item>
     </string-array>
 
+    <string name="EmptyBasket">Please select some items to order.</string>
+
+
     <string name="Add">Add</string>
     <string name="SubTotal">SubTotal:</string>
     <string name="SalesTax">Sales Tax:</string>
     <string name="Total">Total:</string>
 
     <string name="CurrentOrder">Current Order</string>
-
+    <string name="StoreOrders">Store Orders</string>
+    <string name="PlaceOrder">Place Order</string>
 
     <string-array name="donut_names">
         <item>Double Chocolate</item>

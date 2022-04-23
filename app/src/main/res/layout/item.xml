@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="73dp"
+        android:layout_height="match_parent"
         android:layout_margin="4dp">
 
         <ImageView
@@ -22,7 +22,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="17dp"
             android:layout_toEndOf="@+id/imageView"
-            android:text="Line 1" />
+            android:text="@string/StoreOrders" />
 
         <ImageView
             android:id="@+id/deleteButton"

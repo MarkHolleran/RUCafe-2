@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.res.Resources;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,6 +22,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     public static Order coffeeOrders = new Order();
 //i think these strings count as being hardcoded
     public static final String[] sizes = {"Short", "Tall", "Grande", "Venti"};
+
     public static final int INITIAL_QUANTITY = 1;
 
     private RecyclerView coffeeList;
@@ -83,7 +85,10 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
 
     public void addItem(){
 
-        String size = sizes[spinner.getSelectedItemPosition()];
+        Resources res = getResources();
+        String size = res.getStringArray(R.array.coffeeSizes)[spinner.getSelectedItemPosition()];
+
+        //String size = sizes[spinner.getSelectedItemPosition()];
         ArrayList<String> toppings = new ArrayList<>();
         checkToppings(toppings);
         Coffee item = new Coffee(size, toppings);

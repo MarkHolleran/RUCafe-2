@@ -100,7 +100,8 @@ public class Order implements Customizable {
      * it's ObservableList
      */
     public String toString() {
-        return orderNumber + " " + order.toString();
+        return("Order: " + orderNumber + " " + order.toString() + "\nTotal: $"
+                + String.format("%.2f", this.orderPriceTax()));
     }
 
     public String toStringWithoutOrderNumber (){
