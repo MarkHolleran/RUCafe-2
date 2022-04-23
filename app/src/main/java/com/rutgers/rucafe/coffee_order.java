@@ -18,8 +18,6 @@ import java.util.ArrayList;
 
 public class coffee_order extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    //public static ArrayList<MenuItem> coffeeOrders = new ArrayList<>();
-
     public static Order coffeeOrders = new Order();
 //i think these strings count as being hardcoded
     public static final String[] sizes = {"Short", "Tall", "Grande", "Venti"};
@@ -50,32 +48,28 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_coffee_order);
 
         createViews();
-
-
-        addButton = findViewById(R.id.addButton);
-        spinner = findViewById(R.id.spinnerCoffee);
-        cream = findViewById(R.id.creamCoffee);
-        syrup = findViewById(R.id.syrupCoffee);
-        caramel = findViewById(R.id.caramelCoffee);
-        whippedCream = findViewById(R.id.whippedCreamCoffee);
-        subtotal = findViewById(R.id.subtotal);
-        subtotal.setText(String.format("$"+"%.2f", coffeeOrders.orderPrice()));
-
+        createButtons();
 
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addItem();
-                double sum = 0;
-                for(MenuItem items: coffeeOrders.getOrder()){
-                    sum += items.itemPrice();
-                }
-                subtotal.setText(String.format("$"+"%.2f", coffeeOrders.orderPrice()));
-                coffeeAdapter.notifyDataSetChanged();
+                updateBalance();
             }
         });
 
+    }
+
+    private void createButtons(){
+        addButton = findViewById(R.id.addButton);
+        spinner = findViewById(R.id.spinnerCoffee);
+        cream = findViewById(R.id.creamCoffee);
+        syrup = findViewById(R.id.syrupCoffee);
+        caramel = findViewById(R.id.caramelCoffee);
+        whippedCream = findViewById(R.id.whippedCreamCoffee);
+        subtotal = findViewById(R.id.coffeeSubTotal);
+        subtotal.setText(String.format("$"+"%.2f", coffeeOrders.orderPrice()));
     }
 
     private void updateBalance(){

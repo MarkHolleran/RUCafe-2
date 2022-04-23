@@ -2,17 +2,15 @@ package com.rutgers.rucafe;
 
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 
-public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHolder> {
+public class orderAdapt extends RecyclerView.Adapter<orderAdapt.orderViewHolder> {
     private ArrayList<MenuItem> itemArrayList;
     private OnItemClickListener listener;
 
@@ -29,11 +27,11 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
     }
 
 
-    public static class coffeeViewHolder extends RecyclerView.ViewHolder {
+    public static class orderViewHolder extends RecyclerView.ViewHolder {
         public TextView textView;
         public ImageView deleteImage;
 
-        public coffeeViewHolder(View itemView, OnItemClickListener listener) {
+        public orderViewHolder(View itemView, OnItemClickListener listener) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
             deleteImage = itemView.findViewById(R.id.deleteButton);
@@ -53,19 +51,19 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
     }
 
 
-    public coffeeAdapt(ArrayList<MenuItem> list) {
+    public orderAdapt(ArrayList<MenuItem> list) {
         itemArrayList = list;
     }
 
     @Override
-    public coffeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public orderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View viewss = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
-        coffeeViewHolder cViewHolder = new coffeeViewHolder(viewss, listener);
+        orderViewHolder cViewHolder = new orderViewHolder(viewss, listener);
         return cViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(coffeeViewHolder holder, int position) {
+    public void onBindViewHolder(orderViewHolder holder, int position) {
         MenuItem currentItem = itemArrayList.get(position);
         holder.textView.setText(currentItem.toString());
     }
