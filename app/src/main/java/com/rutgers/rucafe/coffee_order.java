@@ -71,7 +71,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         caramel = findViewById(R.id.caramelCoffee);
         whippedCream = findViewById(R.id.whippedCreamCoffee);
         subtotal = findViewById(R.id.coffeeSubTotal);
-        subtotal.setText(String.format("$"+"%.2f", coffeeOrders.orderPrice()));
+        subtotal.setText(String.format("Subtotal: $"+"%.2f", coffeeOrders.orderPrice()));
     }
 
     private void updateBalance(){
@@ -79,7 +79,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         for(MenuItem items: coffeeOrders.getOrder()){
             sum += items.itemPrice();
         }
-        subtotal.setText(String.format("$"+"%.2f", coffeeOrders.orderPrice()));
+        subtotal.setText(String.format("Subtotal: $"+"%.2f", coffeeOrders.orderPrice()));
         coffeeAdapter.notifyDataSetChanged();
     }
 
@@ -111,7 +111,6 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         duplicateDonutFound = false;
 
 
-
         System.out.println(item.toString());
 
         //private CheckBox cream;
@@ -124,11 +123,10 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         caramel.setChecked(false);
         whippedCream.setChecked(false);
         spinner.setSelection(0);
+
     }
 
     private void checkToppings(ArrayList<String> toppings){
-        System.out.println("Toppings before: "+ toppings);
-        //toppings.clear();
         toppings.remove(CREAM);
         toppings.remove(SYRUP);
         toppings.remove(CARAMEL);
@@ -146,7 +144,6 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         if(whippedCream.isChecked()){
             toppings.add(WHIPPEDCREAM);
         }
-        System.out.println("Toppings After: " + toppings);
     }
 
 

@@ -27,6 +27,13 @@
         <item>Venti</item>
     </string-array>
 
+    <string-array name="buttonListSet">
+        <item>Order Donut</item>
+        <item>Order Coffee</item>
+        <item>Current Order</item>
+        <item>All Orders</item>
+    </string-array>
+
     <string name="EmptyBasket">Please select some items to order.</string>
 
 
