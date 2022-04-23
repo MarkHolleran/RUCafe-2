@@ -21,18 +21,6 @@
             android:layout_height="wrap_content"
             android:background="@color/black">
 
-            <Button
-                android:id="@+id/fucj"
-                android:layout_width="136dp"
-                android:layout_height="75dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="+"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TouchTargetSizeCheck" />
-
             <TextView
                 android:id="@+id/donutFlavor"
                 android:layout_width="wrap_content"

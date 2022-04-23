@@ -21,7 +21,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     //public static ArrayList<MenuItem> coffeeOrders = new ArrayList<>();
 
     public static Order coffeeOrders = new Order();
-
+//i think these strings count as being hardcoded
     public static final String[] sizes = {"Short", "Tall", "Grande", "Venti"};
     public static final int INITIAL_QUANTITY = 1;
 

@@ -62,7 +62,7 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
 
         private TextView donutType, donutPrice,donutFlavor;
         private ImageView donutImage;
-        private Button addDonut;
+        //private Button addDonut;
         private ConstraintLayout parentLayout;
 
 
@@ -73,12 +73,8 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
             donutType = donutView.findViewById(R.id.donutType);
             donutPrice = donutView.findViewById(R.id.donutPrice);
             donutImage = donutView.findViewById(R.id.donutImage);
-            addDonut = donutView.findViewById(R.id.fucj);
             parentLayout = itemView.findViewById(R.id.rowLayout);
-            setAddButtonOnClick(donutView);
 
-
-            //if you click an imageview the program crashes bc of this
             parentLayout.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -88,42 +84,9 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
                     intent.putExtra("DONUTTYPESELECTED", donutType.getText());
                     intent.putExtra("DONUTFLAVORSELECTED", donutFlavor.getText());
                     donutView.getContext().startActivity(intent);
-
-
-
             }
-
-
         });
-
-
     }
-
-        private void setAddButtonOnClick(@NonNull View itemView) {
-            addDonut.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(itemView.getContext());
-                    alert.setTitle("Add to order");
-                    alert.setMessage(donutFlavor.getText().toString() + " " + donutType.getText().toString());
-                    //handle the "YES" click
-                    alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(itemView.getContext(),
-                                    donutFlavor.getText().toString() + " " + donutType.getText().toString() + " added.", Toast.LENGTH_LONG).show();
-                        }
-                        //handle the "NO" click
-                    }).setNegativeButton("no", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(itemView.getContext(),
-                                    donutFlavor.getText().toString() + " " + donutType.getText().toString() + " not added.", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                    AlertDialog dialog = alert.create();
-                    dialog.show();
-                }
-            });
-        }
         }
     }
 

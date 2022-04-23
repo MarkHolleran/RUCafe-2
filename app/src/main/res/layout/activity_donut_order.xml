@@ -8,10 +8,42 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcView_menu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="417dp"
+        android:layout_height="353dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/donutListView"
+        android:layout_width="326dp"
+        android:layout_height="289dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rcView_menu" />
+
+    <TextView
+        android:id="@+id/donutOrderSubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="36dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/subTotalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/donutOrderSubtotal"
+        app:layout_constraintTop_toBottomOf="@+id/donutListView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
