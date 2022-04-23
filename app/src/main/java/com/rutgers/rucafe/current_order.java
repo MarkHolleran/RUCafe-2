@@ -1,9 +1,11 @@
 package com.rutgers.rucafe;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -49,16 +51,49 @@ public class current_order extends AppCompatActivity {
         placeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(allOrders.getOrder().isEmpty()){
+                if (allOrders.getOrder().isEmpty()) {
                     Resources res = getResources();
                     String text = res.getString(R.string.EmptyBasket);
                     Toast.makeText(itemList.getContext(), text, Toast.LENGTH_LONG).show();
-                }else{
-                    placeOrder();
+                } else {
+
+
+                    AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
+                    alert.setTitle("Place order");
+
+
+                    alert.setMessage("Would you like to place the order?");
+
+                    alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int which) {
+
+                            placeOrder();
+                            Toast.makeText(view.getContext(), "Order has been placed.", Toast.LENGTH_LONG).show();
+
+
+                        }
+                    }).setNegativeButton("no", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int which) {
+
+
+                            Toast.makeText(view.getContext(),  "Order not placed.", Toast.LENGTH_LONG).show();
+
+                        }
+                    });
+
+                    AlertDialog dialog = alert.create();
+                    dialog.show();
+
                 }
+
 
             }
         });
+
+
+
 
         itemAdapter.setOnItemClickListener(new coffeeAdapt.OnItemClickListener() {
             @Override
@@ -68,12 +103,11 @@ public class current_order extends AppCompatActivity {
         });
 
 
-        //itemAdapter.notifyDataSetChanged();
-    }
-
+}
 
 
     private void placeOrder(){
+
         allOrders.setOrderNumber(orderNumber);
         store_orders.storeOrders.getOrderList().add(allOrders);
         coffee_order.coffeeOrders = new Order();

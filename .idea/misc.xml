@@ -3,29 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../../layout/custom_preview.xml" value="0.1203125" />
-        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_donut_order.xml" value="0.25" />
+        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_coffee_order.xml" value="0.5" />
+        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_current_order.xml" value="0.22010869565217392" />
+        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_donut_order.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_donut_selected.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_item_selected.xml" value="0.18125" />
-        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_main.xml" value="0.3140495867768595" />
         <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_store_orders.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/activity_test.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/row_view.xml" value="0.18125" />
+        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/item.xml" value="0.32760416666666664" />
+        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/row_view.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/layout/sjkee.xml" value="0.18125" />
-        <entry key="app/src/main/res/drawable/ic_baseline_donut_small_24.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.2175" />
-        <entry key="app/src/main/res/layout/activity_coffee_order.xml" value="0.2606339688159235" />
-        <entry key="app/src/main/res/layout/activity_current_order.xml" value="0.35585632324218747" />
-        <entry key="app/src/main/res/layout/activity_donut_order.xml" value="0.22318267822265628" />
-        <entry key="app/src/main/res/layout/activity_donut_selected.xml" value="0.4036458333333333" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.36607055664062504" />
-        <entry key="app/src/main/res/layout/activity_store_orders.xml" value="0.24739583333333334" />
-        <entry key="app/src/main/res/layout/item.xml" value="0.35906059878996055" />
-        <entry key="app/src/main/res/layout/row_view.xml" value="0.5301507537688442" />
+        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/marka/Desktop/school/CS213/CS213Project5/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

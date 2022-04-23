@@ -113,6 +113,19 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
 
 
         System.out.println(item.toString());
+
+        //private CheckBox cream;
+        //    private CheckBox syrup;
+        //    private CheckBox caramel;
+        //    private CheckBox whippedCream;
+
+        cream.setChecked(false);
+        syrup.setChecked(false);
+        caramel.setChecked(false);
+        whippedCream.setChecked(false);
+        spinner.setSelection(0);
+
+
     }
 
     private void checkToppings(ArrayList<String> toppings){

@@ -95,6 +95,8 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         });
     }
 
+
+
     public void updateBalance(){
 
         double sum = 0;
