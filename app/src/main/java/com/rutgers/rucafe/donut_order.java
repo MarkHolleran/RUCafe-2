@@ -66,9 +66,9 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
 
 
     }
-@Override
+    @Override
     public void onResume(){
-       super.onResume();
+        super.onResume();
         updateBalance();
         updateAllOrders();
 
@@ -97,14 +97,12 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
 
     public void updateBalance(){
 
-
-            double sum = 0;
-            for (MenuItem items : donutOrder.getOrder()) {
-                sum += items.itemPrice();
-            }
-            donutOrderSubtotal.setText(String.format("$" + "%.2f", donutOrder.orderPrice()));
-            //donutAdapter.notifyDataSetChanged();
-
+        double sum = 0;
+        for (MenuItem items : donutOrder.getOrder()) {
+            sum += items.itemPrice();
+        }
+        donutOrderSubtotal.setText(String.format("$" + "%.2f", donutOrder.orderPrice()));
+        //donutAdapter.notifyDataSetChanged();
 
     }
 

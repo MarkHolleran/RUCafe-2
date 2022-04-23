@@ -10,8 +10,8 @@
         android:id="@+id/donutToAdd"
         android:layout_width="159dp"
         android:layout_height="55dp"
-        android:layout_marginTop="232dp"
-        android:layout_marginEnd="132dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,18 +19,17 @@
         android:id="@+id/donutQuantitySpinner"
         android:layout_width="88dp"
         android:layout_height="56dp"
-        android:layout_marginTop="92dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="293dp"
+        app:layout_constraintStart_toEndOf="@+id/donutToAdd"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/addDonutToOrderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="52dp"
         android:text="Add to Order"
         app:layout_constraintEnd_toStartOf="@+id/donutQuantitySpinner"
         app:layout_constraintHorizontal_bias="0.523"
@@ -52,7 +51,7 @@
         android:layout_width="164dp"
         android:layout_height="164dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="124dp"
+        android:layout_marginEnd="116dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/apple" />
