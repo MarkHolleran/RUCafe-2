@@ -9,8 +9,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/itemListView"
-        android:layout_width="375dp"
-        android:layout_height="199dp"
+        android:layout_width="380dp"
+        android:layout_height="240dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="130dp"
         android:padding="4dp"

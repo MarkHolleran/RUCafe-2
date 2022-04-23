@@ -118,7 +118,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         for (int i = 0; i < donutFlavors.length; i++) {
             donuts.add(new Donut(donutTypes[i] ,donutFlavors[i]  ,donutImages[i] ));
         }
-        
+
         donutOrderRecyclerView = findViewById(R.id.donutListView);
         donutOrderRecyclerView.setHasFixedSize(true);
         donutLayout = new LinearLayoutManager(this);

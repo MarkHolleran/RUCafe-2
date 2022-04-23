@@ -58,8 +58,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/coffeeListView"
-        android:layout_width="381dp"
-        android:layout_height="238dp"
+        android:layout_width="380dp"
+        android:layout_height="240dp"
         android:layout_marginStart="12dp"
         android:layout_marginBottom="136dp"
         android:padding="4dp"
