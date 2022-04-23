@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button allStoreOrdersButton;
     private Button coffeeOrderButton;
     private Button currentOrderButton;
+    private Button aboutProgram;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        this.aboutProgram = findViewById(R.id.aboutButton);
+        aboutProgram.setOnClickListener(new View.OnClickListener(){
 
-
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, aboutActivity.class));
+            }
+        });
     }
 }

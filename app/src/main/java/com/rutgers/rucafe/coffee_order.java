@@ -124,8 +124,6 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         caramel.setChecked(false);
         whippedCream.setChecked(false);
         spinner.setSelection(0);
-
-
     }
 
     private void checkToppings(ArrayList<String> toppings){

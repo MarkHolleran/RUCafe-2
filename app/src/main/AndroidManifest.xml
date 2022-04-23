@@ -10,12 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RUCafe">
         <activity
+            android:name=".aboutActivity"
+            android:exported="false" />
+        <activity
             android:name=".coffee_order"
             android:exported="false" />
-
-        <activity android:name=".donutSelectedActivity"
-            android:exported="false"/>
-
+        <activity
+            android:name=".donutSelectedActivity"
+            android:exported="false" />
         <activity
             android:name=".donut_order"
             android:exported="false" />

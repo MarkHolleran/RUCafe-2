@@ -10,14 +10,14 @@
 
     <string name="yeast_donut">Yeast Donut</string>
 
-        <string name="shortCoffee">Short</string>
-        <string name="tallCoffee">Tall</string>
-        <string name="grandeCoffee">Grande</string>
-        <string name="ventiCoffee">Venti</string>
-        <string name="creamCoffee">Cream</string>
-        <string name="syrupCoffee">Syrup</string>
-        <string name="caramelCoffee">Caramel</string>
-        <string name="whippedCreamCoffee">Whipped Cream</string>
+    <string name="shortCoffee">Short</string>
+    <string name="tallCoffee">Tall</string>
+    <string name="grandeCoffee">Grande</string>
+    <string name="ventiCoffee">Venti</string>
+    <string name="creamCoffee">Cream</string>
+    <string name="syrupCoffee">Syrup</string>
+    <string name="caramelCoffee">Caramel</string>
+    <string name="whippedCreamCoffee">Whipped Cream</string>
 
 
     <string-array name="coffeeSizes">
@@ -38,6 +38,24 @@
     <string name="CurrentOrder">Current Order</string>
     <string name="StoreOrders">Store Orders</string>
     <string name="PlaceOrder">Place Order</string>
+    <string name="sub_total">Sub Total:</string>
+    <string name="picture_of_donut">picture of donut</string>
+    <string name="quantity">Quantity:</string>
+    <string name="add_to_order">Add to Order</string>
+    <string name="spinner_for_donut_order_quantity">spinner for donut order quantity</string>
+    <string name="trashcan_image">trashcan image</string>
+    <string name="trash_can_image">trash can image</string>
+    <string name="image_of_particular_donut">image of particular donut</string>
+    <string name="order_coffee">Order Coffee</string>
+    <string name="current_order_picture">current order picture</string>
+    <string name="all_orders">All Orders</string>
+    <string name="order_donut">Order Donut</string>
+    <string name="current_order">Current Order</string>
+    <string name="all_order_picture">all order picture</string>
+    <string name="donut_order_picture">donut order picture</string>
+    <string name="order_coffee_picture">order coffee picture</string>
+    <string name="about">About</string>
+    <string name="about_the_program">About the program</string>
 
     <string-array name="donut_names">
         <item>Double Chocolate</item>

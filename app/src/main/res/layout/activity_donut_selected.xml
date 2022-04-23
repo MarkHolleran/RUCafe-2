@@ -21,6 +21,7 @@
         android:layout_height="56dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="293dp"
+        android:contentDescription="@string/spinner_for_donut_order_quantity"
         app:layout_constraintStart_toEndOf="@+id/donutToAdd"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="52dp"
-        android:text="Add to Order"
+        android:text="@string/add_to_order"
         app:layout_constraintEnd_toStartOf="@+id/donutQuantitySpinner"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="28dp"
-        android:text="Quantity:"
+        android:text="@string/quantity"
         app:layout_constraintEnd_toStartOf="@+id/donutQuantitySpinner"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
@@ -52,6 +53,7 @@
         android:layout_height="164dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="116dp"
+        android:contentDescription="@string/picture_of_donut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/apple" />

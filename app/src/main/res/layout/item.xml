@@ -12,6 +12,7 @@
             android:id="@+id/imageView"
             android:layout_width="78dp"
             android:layout_height="match_parent"
+            android:contentDescription="@string/trash_can_image"
             android:padding="2dp" />
 
         <TextView
@@ -32,6 +33,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="3dp"
             android:layout_marginEnd="328dp"
+            android:contentDescription="@string/trashcan_image"
             android:src="@drawable/ic_delete" />
 
     </RelativeLayout>
