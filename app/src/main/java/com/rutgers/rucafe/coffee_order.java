@@ -18,10 +18,10 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 /**
- * Class that represents the functionality of the interface for ordering a Coffee
+ * Class that represents the functionality of the interface for ordering a Coffee.
  *
  * Within this class are all the components of creating a
- * coffee order and their corresponding functionality
+ * coffee order and their corresponding functionality.
  *
  * @author Mark Holleran, Abhitej Bokka
  */

@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 /**
  * Class that represents the functionality of the interface for an Order Object
  *
@@ -23,8 +22,11 @@ import android.widget.Toast;
  */
 public class current_order extends AppCompatActivity {
 
+    public static final int NO_BALANCE = 0;
+    public static final int INITIAL_NUMBER = 1;
+
     public static Order allOrders = new Order();
-    public static int orderNumber = 1;
+    public static int orderNumber = INITIAL_NUMBER;
 
     private RecyclerView itemList;
     private objectAdapter itemAdapter;
@@ -56,8 +58,9 @@ public class current_order extends AppCompatActivity {
 
         placeOrder.setOnClickListener(new View.OnClickListener() {
             /**
-             * 
-             * @param view
+             * Method that handles a confirmation to place an order.
+             *
+             * @param view View containing where the selection happened.
              */
             @Override
             public void onClick(View view) {
@@ -88,6 +91,11 @@ public class current_order extends AppCompatActivity {
         itemAdapter.setOnItemClickListener(this::removeItem);
 }
 
+    /**
+     * When the place Order button is pressed, the Order Object
+     * containing all MenuItems is added to the StoreOrders Object
+     * containing all Orders.
+     */
     private void placeOrder(){
 
         allOrders.setOrderNumber(orderNumber);
@@ -102,7 +110,9 @@ public class current_order extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Method that sets up all the IDs of buttons and relevant text output.
+     */
     private void createButtons(){
         subtotalDisplay = findViewById(R.id.subTotalDisplay);
         taxDisplay = findViewById(R.id.salesTaxDisplay);
@@ -111,6 +121,9 @@ public class current_order extends AppCompatActivity {
 
     }
 
+    /**
+     * Method that sets up the RecyclerView and lets adapter convert the Order.
+     */
     public void createViews(){
 
         itemList = findViewById(R.id.itemListView);
@@ -122,6 +135,12 @@ public class current_order extends AppCompatActivity {
 
     }
 
+    /**
+     * Removes a selected Coffee/Donut Object from the RecyclerView
+     * and updates the RecyclerView along with the total.
+     *
+     * @param position indicating the specific MenuItem to remove.
+     */
     public void removeItem(int position) {
 
         System.out.println("Before: "+ allOrders.getOrder());
@@ -142,8 +161,11 @@ public class current_order extends AppCompatActivity {
 
     }
 
+    /**
+     * Method that helps update the balance of an order when changes are made.
+     */
     private void updateBalance(){
-        double sum = 0;
+        double sum = NO_BALANCE;
         for(MenuItem items: allOrders.getOrder()){
             sum += items.itemPrice();
         }
@@ -152,6 +174,10 @@ public class current_order extends AppCompatActivity {
         totalDisplay.setText(String.format("$"+"%.2f", allOrders.orderPriceTax()));
     }
 
+    /**
+     * Method that helps update the new order list after any MenuItem
+     * is added or deleted.
+     */
     public void updateAllOrders() {
         allOrders = new Order();
         allOrders.getOrder().addAll(coffee_order.coffeeOrders.getOrder());
