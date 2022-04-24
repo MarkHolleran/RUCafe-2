@@ -38,12 +38,14 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     private CheckBox syrup;
     private CheckBox caramel;
     private CheckBox whippedCream;
+    private CheckBox milk;
     private TextView subtotal;
 
     public static final String CREAM = "Cream";
     public static final String SYRUP = "Syrup";
     public static final String CARAMEL = "Caramel";
     public static final String WHIPPEDCREAM = "Whipped Cream";
+    public static final String MILK = "Milk";
 
     /**
      * Initializes variables and creates buttons and the view to order Coffee.
@@ -74,6 +76,8 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         syrup = findViewById(R.id.syrupCoffee);
         caramel = findViewById(R.id.caramelCoffee);
         whippedCream = findViewById(R.id.whippedCreamCoffee);
+        milk = findViewById(R.id.milkCoffee);
+
         subtotal = findViewById(R.id.coffeeSubTotal);
         subtotal.setText(String.format("Subtotal: $"+"%.2f", coffeeOrders.orderPrice()));
         coffeeAdapter.notifyDataSetChanged();
@@ -125,6 +129,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         syrup.setChecked(false);
         caramel.setChecked(false);
         whippedCream.setChecked(false);
+        milk.setChecked(false);
     }
 
 
@@ -140,6 +145,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         toppings.remove(SYRUP);
         toppings.remove(CARAMEL);
         toppings.remove(WHIPPEDCREAM);
+        toppings.remove(MILK);
 
         if(cream.isChecked()){
             toppings.add(CREAM);
@@ -153,6 +159,10 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         if(whippedCream.isChecked()){
             toppings.add(WHIPPEDCREAM);
         }
+        if(milk.isChecked()){
+            toppings.add(MILK);
+        }
+
     }
 
 

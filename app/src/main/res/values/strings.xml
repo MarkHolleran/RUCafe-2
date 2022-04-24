@@ -18,6 +18,7 @@
     <string name="syrupCoffee">Syrup</string>
     <string name="caramelCoffee">Caramel</string>
     <string name="whippedCreamCoffee">Whipped Cream</string>
+    <string name="milkCoffee">Milk</string>
 
 
     <string-array name="coffeeSizes">

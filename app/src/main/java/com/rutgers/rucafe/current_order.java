@@ -64,32 +64,40 @@ public class current_order extends AppCompatActivity {
              */
             @Override
             public void onClick(View view) {
-                if (allOrders.getOrder().isEmpty()) {
-                    Resources res = getResources();
-                    String text = res.getString(R.string.EmptyBasket);
-                    Toast.makeText(itemList.getContext(), text, Toast.LENGTH_SHORT).show();
-                } else {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
-                    alert.setTitle("Place order");
-                    alert.setMessage("Would you like to place the order?");
-                    alert.setPositiveButton("yes", (dialogInterface, which) -> {
-                        placeOrder();
-                        Toast.makeText(view.getContext(), "Order has been placed.",
-                                Toast.LENGTH_SHORT).show();
-
-                    }).setNegativeButton("no", (dialogInterface, which) ->
-                            Toast.makeText(view.getContext(),
-                                    "Order not placed.", Toast.LENGTH_SHORT).show());
-
-                    AlertDialog dialog = alert.create();
-                    dialog.show();
-                }
-
+                onClickFunctionality(view);
             }
         });
 
         itemAdapter.setOnItemClickListener(this::removeItem);
-}
+    }
+
+    /**
+     * The actual functionality of confirmations to place an order.
+     *
+     * @param view View containing where the selection happened.
+     */
+    private void onClickFunctionality(View view){
+        if (allOrders.getOrder().isEmpty()) {
+            Resources res = getResources();
+            String text = res.getString(R.string.EmptyBasket);
+            Toast.makeText(itemList.getContext(), text, Toast.LENGTH_SHORT).show();
+        } else {
+            AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
+            alert.setTitle("Place order");
+            alert.setMessage("Would you like to place the order?");
+            alert.setPositiveButton("yes", (dialogInterface, which) -> {
+                placeOrder();
+                Toast.makeText(view.getContext(), "Order has been placed.",
+                        Toast.LENGTH_SHORT).show();
+
+            }).setNegativeButton("no", (dialogInterface, which) ->
+                    Toast.makeText(view.getContext(),
+                            "Order not placed.", Toast.LENGTH_SHORT).show());
+
+            AlertDialog dialog = alert.create();
+            dialog.show();
+        }
+    }
 
     /**
      * When the place Order button is pressed, the Order Object
