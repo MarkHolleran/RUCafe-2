@@ -57,7 +57,6 @@ public class current_order extends AppCompatActivity {
                     Toast.makeText(itemList.getContext(), text, Toast.LENGTH_LONG).show();
                 } else {
 
-
                     AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
                     alert.setTitle("Place order");
 
@@ -92,19 +91,14 @@ public class current_order extends AppCompatActivity {
             }
         });
 
-
-
-
         itemAdapter.setOnItemClickListener(new coffeeAdapt.OnItemClickListener() {
+
             @Override
             public void onDeleteClick(int position) {
                 removeItem(position);
             }
         });
-
-
 }
-
 
     private void placeOrder(){
 
@@ -138,10 +132,8 @@ public class current_order extends AppCompatActivity {
         itemList.setHasFixedSize(true);
         itemLayout = new LinearLayoutManager(this);
         itemAdapter = new coffeeAdapt(allOrders.getOrder());
-
         itemList.setLayoutManager(itemLayout);
         itemList.setAdapter(itemAdapter);
-
 
     }
 

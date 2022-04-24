@@ -32,6 +32,13 @@ public class store_orders extends AppCompatActivity {
         itemAdapter.setOnItemClickListener(new coffeeAdapt.OnItemClickListener() {
             @Override
             public void onDeleteClick(int position) {
+
+
+
+
+
+
+
                 removeItem(position);
             }
         });
