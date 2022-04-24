@@ -20,14 +20,9 @@ import java.util.ArrayList;
 public class coffee_order extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static Order coffeeOrders = new Order();
-//i think these strings count as being hardcoded
-    public static final String[] sizes = {"Short", "Tall", "Grande", "Venti"};
-
     public static final int INITIAL_QUANTITY = 1;
 
-    private RecyclerView coffeeList;
     private coffeeAdapt coffeeAdapter;
-    private RecyclerView.LayoutManager coffeeLayout;
 
     private Button addButton;
     private Spinner spinner;
@@ -42,8 +37,6 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     public static final String CARAMEL = "Caramel";
     public static final String WHIPPEDCREAM = "Whipped Cream";
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,15 +45,10 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         createViews();
         createButtons();
 
-
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addItem();
-                updateBalance();
-            }
+        addButton.setOnClickListener(view -> {
+            addItem();
+            updateBalance();
         });
-
     }
 
     private void createButtons(){
@@ -84,17 +72,15 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void addItem(){
-
         Resources res = getResources();
         String size = res.getStringArray(R.array.coffeeSizes)[spinner.getSelectedItemPosition()];
 
-        //String size = sizes[spinner.getSelectedItemPosition()];
         ArrayList<String> toppings = new ArrayList<>();
         checkToppings(toppings);
         Coffee item = new Coffee(size, toppings);
         boolean duplicateDonutFound = false;
 
-        if(item.getQuantity() < 1){
+        if(item.getQuantity() < INITIAL_QUANTITY){
             item.setQuantity(INITIAL_QUANTITY);
         }
 
@@ -108,22 +94,11 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
             item.setQuantity(INITIAL_QUANTITY);
             coffeeOrders.add(item);
         }
-        duplicateDonutFound = false;
-
-
-        System.out.println(item.toString());
-
-        //private CheckBox cream;
-        //    private CheckBox syrup;
-        //    private CheckBox caramel;
-        //    private CheckBox whippedCream;
 
         cream.setChecked(false);
         syrup.setChecked(false);
         caramel.setChecked(false);
         whippedCream.setChecked(false);
-        spinner.setSelection(0);
-
     }
 
     private void checkToppings(ArrayList<String> toppings){
@@ -149,7 +124,6 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
 
     public void removeItem(int position) {
         coffeeOrders.getOrder().remove(position);
-
         coffeeAdapter.notifyItemRemoved(position);
         updateBalance();
     }
@@ -162,9 +136,9 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        coffeeList = findViewById(R.id.coffeeListView);
+        RecyclerView coffeeList = findViewById(R.id.coffeeListView);
         coffeeList.setHasFixedSize(true);
-        coffeeLayout = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager coffeeLayout = new LinearLayoutManager(this);
         coffeeAdapter = new coffeeAdapt(coffeeOrders.getOrder());
 
         coffeeList.setLayoutManager(coffeeLayout);
