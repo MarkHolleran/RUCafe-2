@@ -27,6 +27,7 @@ public class Coffee extends MenuItem implements Customizable {
     public static final String SYRUP = "Syrup";
     public static final String CARAMEL = "Caramel";
     public static final String WHIPPEDCREAM = "Whipped Cream";
+    public static final String MILK = "Milk";
 
     private ArrayList<String> addins;
     private String size = null;
@@ -53,7 +54,6 @@ public class Coffee extends MenuItem implements Customizable {
 
         if (size.equals(SHORT)){
             this.setItemPrice(PRICE_OF_SIZE_SHORT);
-
         }else if (size.equals(TALL)){
             this.setItemPrice(PRICE_OF_SIZE_TALL);
         }else if (size.equals(GRANDE)){
