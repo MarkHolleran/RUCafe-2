@@ -29,10 +29,6 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
     private objectAdapter coffeeAdapter;
     private TextView donutOrderSubtotal;
     private ArrayList<Donut> donuts = new ArrayList<>();
-    private final int [] donutImages = {R.drawable.apple, R.drawable.banana, R.drawable.grapes,
-            R.drawable.mango, R.drawable.orange, R.drawable.peach, R.drawable.pineapple,
-            R.drawable.strawberry, R.drawable.strawberry, R.drawable.strawberry,
-            R.drawable.strawberry, R.drawable.strawberry};
 
     /**
      * Initializes variables and creates buttons and the view to order Donut.
@@ -126,7 +122,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         String [] donutTypes = getResources().getStringArray(R.array.donut_types);
 
         for (int i = 0; i < donutFlavors.length; i++) {
-            donuts.add(new Donut(donutTypes[i] ,donutFlavors[i]  ,donutImages[i] ));
+            donuts.add(new Donut(donutTypes[i] ,donutFlavors[i]));
         }
 
         donutOrderRecyclerView = findViewById(R.id.donutListView);

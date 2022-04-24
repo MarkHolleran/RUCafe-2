@@ -43,7 +43,6 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
         double d = donuts.get(position).itemPrice();
         String s = String.valueOf(d);
         holder.donutPrice.setText("Price per: $" +s);
-        holder.donutImage.setImageResource(donuts.get(position).getImage());
     }
 
     @Override
@@ -54,7 +53,6 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
     public static class donutHolder extends RecyclerView.ViewHolder{
 
         private TextView donutType, donutPrice,donutFlavor;
-        private ImageView donutImage;
         private ConstraintLayout parentLayout;
 
 
@@ -64,7 +62,6 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
             donutFlavor = donutView.findViewById(R.id.donutFlavor);
             donutType = donutView.findViewById(R.id.donutType);
             donutPrice = donutView.findViewById(R.id.donutPrice);
-            donutImage = donutView.findViewById(R.id.donutImage);
             parentLayout = itemView.findViewById(R.id.rowLayout);
 
                 parentLayout.setOnClickListener(view -> {

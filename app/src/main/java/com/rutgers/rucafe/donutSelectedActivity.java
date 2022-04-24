@@ -85,7 +85,7 @@ public class donutSelectedActivity extends AppCompatActivity {
             AlertDialog.Builder alert = new AlertDialog.Builder(itemView.getContext());
             alert.setTitle("Add to order");
             Donut newDonut = new Donut(getIntent().getStringExtra("DONUTTYPESELECTED"),
-                    getIntent().getStringExtra("DONUTFLAVORSELECTED"), 1);
+                    getIntent().getStringExtra("DONUTFLAVORSELECTED"));
 
             newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+1);
             alert.setMessage(newDonut.toString());
@@ -117,7 +117,7 @@ public class donutSelectedActivity extends AppCompatActivity {
      */
     public void addItem() {
 
-        Donut newDonut = new Donut(getIntent().getStringExtra("DONUTTYPESELECTED"), getIntent().getStringExtra("DONUTFLAVORSELECTED"), 1);
+        Donut newDonut = new Donut(getIntent().getStringExtra("DONUTTYPESELECTED"), getIntent().getStringExtra("DONUTFLAVORSELECTED"));
         newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+1);
 
         boolean duplicateDonutFound = false;
