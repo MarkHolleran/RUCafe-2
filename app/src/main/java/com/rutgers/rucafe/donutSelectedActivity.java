@@ -15,7 +15,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class donutSelectedActivity extends AppCompatActivity {
-    public static Order donutOrder = new Order();
+   // public static Order donutOrder = new Order();
     private Button addDonutToOrderButton;
     private TextView donutToAdd;
 
@@ -98,7 +98,7 @@ public class donutSelectedActivity extends AppCompatActivity {
 
         boolean duplicateDonutFound = false;
 
-        for (MenuItem num : donutOrder.getOrder()) {
+        for (MenuItem num : donut_order.donutOrder.getOrder()) {
             if (num.compare(newDonut)) {
                 duplicateDonutFound = true;
                 num.setQuantity(num.getQuantity() + newDonut.getQuantity());
@@ -107,11 +107,10 @@ public class donutSelectedActivity extends AppCompatActivity {
 
         if (!duplicateDonutFound){
                 newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+1);
-                donutOrder.add(newDonut);
+            donut_order.donutOrder.add(newDonut);
             }
 
-        System.out.println(donutOrder.toStringWithoutOrderNumber());
-        System.out.println(donutOrder.orderPrice());
-        donut_order.donutOrder = donutOrder;
+
+        //donut_order.donutOrder = donutOrder;
     }
 }
