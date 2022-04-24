@@ -13,8 +13,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHolder> {
-    private ArrayList<?> itemArrayList;
+public class objectAdapter extends RecyclerView.Adapter<objectAdapter.objectViewHolder> {
+    private final ArrayList<?> itemArrayList;
     private OnItemClickListener listener;
 
     public interface OnItemClickListener {
@@ -26,11 +26,11 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
         this.listener = listener;
     }
 
-    public static class coffeeViewHolder extends RecyclerView.ViewHolder {
+    public static class objectViewHolder extends RecyclerView.ViewHolder {
         public TextView textView;
         public ImageView deleteImage;
 
-        public coffeeViewHolder(View itemView, OnItemClickListener listener) {
+        public objectViewHolder(View itemView, OnItemClickListener listener) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
             deleteImage = itemView.findViewById(R.id.deleteButton);
@@ -60,20 +60,19 @@ public class coffeeAdapt extends RecyclerView.Adapter<coffeeAdapt.coffeeViewHold
         }
     }
 
-    public coffeeAdapt(ArrayList<?> list) {
+    public objectAdapter(ArrayList<?> list) {
         itemArrayList = list;
     }
 
     @NonNull
     @Override
-    public coffeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public objectViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View viewss = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
-        return new coffeeViewHolder(viewss, listener);
+        return new objectViewHolder(viewss, listener);
     }
 
     @Override
-    public void onBindViewHolder(coffeeViewHolder holder, int position) {
-        //MenuItem currentItem = itemArrayList.get(position);
+    public void onBindViewHolder(objectViewHolder holder, int position) {
         holder.textView.setText(itemArrayList.get(position).toString());
     }
 

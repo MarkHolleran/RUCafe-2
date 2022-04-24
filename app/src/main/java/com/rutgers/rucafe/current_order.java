@@ -18,7 +18,7 @@ public class current_order extends AppCompatActivity {
     public static int orderNumber = 1;
 
     private RecyclerView itemList;
-    private coffeeAdapt itemAdapter;
+    private objectAdapter itemAdapter;
     private RecyclerView.LayoutManager itemLayout;
 
     private TextView subtotalDisplay;
@@ -100,7 +100,7 @@ public class current_order extends AppCompatActivity {
         itemList = findViewById(R.id.itemListView);
         itemList.setHasFixedSize(true);
         itemLayout = new LinearLayoutManager(this);
-        itemAdapter = new coffeeAdapt(allOrders.getOrder());
+        itemAdapter = new objectAdapter(allOrders.getOrder());
         itemList.setLayoutManager(itemLayout);
         itemList.setAdapter(itemAdapter);
 

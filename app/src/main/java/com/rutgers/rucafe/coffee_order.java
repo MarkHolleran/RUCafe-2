@@ -22,7 +22,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     public static Order coffeeOrders = new Order();
     public static final int INITIAL_QUANTITY = 1;
 
-    private coffeeAdapt coffeeAdapter;
+    private objectAdapter coffeeAdapter;
 
     private Button addButton;
     private Spinner spinner;
@@ -141,7 +141,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         RecyclerView coffeeList = findViewById(R.id.coffeeListView);
         coffeeList.setHasFixedSize(true);
         RecyclerView.LayoutManager coffeeLayout = new LinearLayoutManager(this);
-        coffeeAdapter = new coffeeAdapt(coffeeOrders.getOrder());
+        coffeeAdapter = new objectAdapter(coffeeOrders.getOrder());
 
         coffeeList.setLayoutManager(coffeeLayout);
         coffeeList.setAdapter(coffeeAdapter);

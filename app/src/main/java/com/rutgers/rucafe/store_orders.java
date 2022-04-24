@@ -10,7 +10,7 @@ public class store_orders extends AppCompatActivity {
 
     public static StoreOrders storeOrders = new StoreOrders();
 
-    private coffeeAdapt itemAdapter;
+    private objectAdapter itemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class store_orders extends AppCompatActivity {
         RecyclerView itemList = findViewById(R.id.ordersListView);
         itemList.setHasFixedSize(true);
         RecyclerView.LayoutManager itemLayout = new LinearLayoutManager(this);
-        itemAdapter = new coffeeAdapt(storeOrders.getOrderList());
+        itemAdapter = new objectAdapter(storeOrders.getOrderList());
 
         itemList.setLayoutManager(itemLayout);
         itemList.setAdapter(itemAdapter);

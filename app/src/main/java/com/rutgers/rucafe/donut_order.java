@@ -18,7 +18,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
 
     private RecyclerView donutOrderRecyclerView;
     private RecyclerView.LayoutManager donutLayout;
-    private coffeeAdapt coffeeAdapter;
+    private objectAdapter coffeeAdapter;
     private TextView donutOrderSubtotal;
     private ArrayList<Donut> donuts = new ArrayList<>();
     private final int [] donutImages = {R.drawable.apple, R.drawable.banana, R.drawable.grapes,
@@ -38,7 +38,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         rcview.setAdapter(adapter);
         rcview.setLayoutManager(new LinearLayoutManager(this));
 
-        coffeeAdapter = new coffeeAdapt(donutOrder.getOrder());
+        coffeeAdapter = new objectAdapter(donutOrder.getOrder());
         donutOrderRecyclerView.setLayoutManager(donutLayout);
         donutOrderRecyclerView.setAdapter(coffeeAdapter);
 
@@ -64,7 +64,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
 
     public void updateAllOrders() {
 
-        coffeeAdapter = new coffeeAdapt(donutOrder.getOrder());
+        coffeeAdapter = new objectAdapter(donutOrder.getOrder());
         donutOrderRecyclerView.setLayoutManager(donutLayout);
         donutOrderRecyclerView.setAdapter(coffeeAdapter);
 
