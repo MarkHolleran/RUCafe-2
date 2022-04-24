@@ -60,6 +60,8 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         whippedCream = findViewById(R.id.whippedCreamCoffee);
         subtotal = findViewById(R.id.coffeeSubTotal);
         subtotal.setText(String.format("Subtotal: $"+"%.2f", coffeeOrders.orderPrice()));
+        coffeeAdapter.notifyDataSetChanged();
+
     }
 
     private void updateBalance(){
@@ -144,12 +146,7 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         coffeeList.setLayoutManager(coffeeLayout);
         coffeeList.setAdapter(coffeeAdapter);
 
-        coffeeAdapter.setOnItemClickListener(new coffeeAdapt.OnItemClickListener() {
-            @Override
-            public void onDeleteClick(int position) {
-                removeItem(position);
-            }
-        });
+        coffeeAdapter.setOnItemClickListener(this::removeItem);
     }
 
     @Override

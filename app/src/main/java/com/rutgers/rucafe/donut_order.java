@@ -15,21 +15,13 @@ import java.util.ArrayList;
 public class donut_order extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static Order donutOrder = new Order();
-    public static final int INITIAL_QUANTITY = 1;
 
-    private RecyclerView donutList;
     private RecyclerView donutOrderRecyclerView;
-    private donutAdapter donutAdapter;
     private RecyclerView.LayoutManager donutLayout;
     private coffeeAdapt coffeeAdapter;
-    private RecyclerView.LayoutManager coffeeLayout;
-
     private TextView donutOrderSubtotal;
-    //private TextView subTotalName;
-
     private ArrayList<Donut> donuts = new ArrayList<>();
-
-    private int [] donutImages = {R.drawable.apple, R.drawable.banana, R.drawable.grapes,
+    private final int [] donutImages = {R.drawable.apple, R.drawable.banana, R.drawable.grapes,
             R.drawable.mango, R.drawable.orange, R.drawable.peach, R.drawable.pineapple,
             R.drawable.strawberry, R.drawable.strawberry, R.drawable.strawberry, R.drawable.strawberry, R.drawable.strawberry};
 
@@ -37,43 +29,37 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donut_order);
+
         RecyclerView rcview = findViewById(R.id.rcView_menu);
         setupMenuItems();
-        donutOrderRecyclerView = findViewById(R.id.donutListView);
-        donutLayout = new LinearLayoutManager(this);
-        donutOrderRecyclerView = findViewById(R.id.donutListView);
-        donutOrderRecyclerView.setHasFixedSize(true);
-        donutOrderSubtotal = findViewById(R.id.donutOrderSubtotal);
-        //subTotalName = findViewById(R.id.subTotalText);
-        donutLayout = new LinearLayoutManager(this);
+        createViews();
+
         donutAdapter adapter = new donutAdapter(this,donuts);
         rcview.setAdapter(adapter);
         rcview.setLayoutManager(new LinearLayoutManager(this));
-
 
         coffeeAdapter = new coffeeAdapt(donutOrder.getOrder());
         donutOrderRecyclerView.setLayoutManager(donutLayout);
         donutOrderRecyclerView.setAdapter(coffeeAdapter);
 
-        updateBalance();
-        //idk if needed
-
         donutOrderSubtotal.setText(String.format("$"+"%.2f", donutOrder.orderPrice()));
-        //donutOrderSubtotal.setText();
-
-        //subTotalName.setText("Sub Total:");
-
-
-
+        updateBalance();
     }
+
+    private void createViews(){
+        donutOrderRecyclerView = findViewById(R.id.donutListView);
+        donutLayout = new LinearLayoutManager(this);
+        donutOrderRecyclerView = findViewById(R.id.donutListView);
+        donutOrderRecyclerView.setHasFixedSize(true);
+        donutOrderSubtotal = findViewById(R.id.donutOrderSubtotal);
+        donutLayout = new LinearLayoutManager(this);
+    }
+
     @Override
     public void onResume(){
         super.onResume();
         updateBalance();
         updateAllOrders();
-
-
-
     }
 
     public void updateAllOrders() {
@@ -82,16 +68,13 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         donutOrderRecyclerView.setLayoutManager(donutLayout);
         donutOrderRecyclerView.setAdapter(coffeeAdapter);
 
-        coffeeAdapter.setOnItemClickListener(new coffeeAdapt.OnItemClickListener() {
-            @Override
-            public void onDeleteClick(int position) {
-                removeItem(position);
-                updateAllOrders();
-                updateBalance();
+        coffeeAdapter.setOnItemClickListener(position -> {
+            removeItem(position);
+            updateAllOrders();
+            updateBalance();
 
-                System.out.println(donutOrder.getOrder().toString());
+            System.out.println(donutOrder.getOrder().toString());
 
-            }
         });
     }
 
