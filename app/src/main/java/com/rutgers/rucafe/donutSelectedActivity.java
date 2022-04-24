@@ -57,14 +57,10 @@ public class donutSelectedActivity extends AppCompatActivity {
         addDonutToOrderButton.setText("Add");
         donutPrice.setText(intent.getStringExtra("DONUT"));
         AddDonutToOrderButton(findViewById(R.id.addDonutToOrderButton));
-       // createViews();
         Integer[] items = new Integer[]{1,2,3,4,5,6,7,8,9,10,11,12};
         ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
-
         donutOrderQuantity.setAdapter(adapter);
         donutOrderQuantity.setSelection(0);
-
-
         donutToAdd.setText(getIntent().getStringExtra("DONUTFLAVORSELECTED")
                 + "\n" +getIntent().getStringExtra("DONUTTYPESELECTED"));
 

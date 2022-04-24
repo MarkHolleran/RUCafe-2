@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 
 /**
  * This class represents the Main Activity used to act as a
@@ -14,6 +15,11 @@ import android.widget.Button;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private ImageView donutMainMenuImage;
+    private ImageView x;
+    private ImageView c;
+    private ImageView z;
+
     /**
      * Initializes variables and creates Buttons to view Activities to order Items.
      *
@@ -23,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       // donutMainMenuImage.setImageResource(R.drawable.donutmainmenuimage);
 
         Button donutOrderButton = findViewById(R.id.OrderDonutButton);
         donutOrderButton.setOnClickListener(v ->
@@ -49,5 +57,8 @@ public class MainActivity extends AppCompatActivity {
         Button aboutProgram = findViewById(R.id.aboutButton);
         aboutProgram.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, aboutActivity.class)));
+        // donutMainMenuImage.setImageResource(R.drawable.donutmainmenuimage);
+
     }
+
 }
