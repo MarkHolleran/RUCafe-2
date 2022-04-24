@@ -16,6 +16,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.w3c.dom.Text;
 
+/**
+ * This class represents the Activity
+ * present when a specific Donut is
+ * selected from the Recyclerview in
+ * the donut_order class.
+ *
+ * Within this class are methods for
+ * initialization of the Activity,
+ * Setting up the functionality for
+ * the Add button.
+ *
+ * @author Mark Holleran, Abhitej Bokka
+ */
 public class donutSelectedActivity extends AppCompatActivity {
     private Button addDonutToOrderButton;
     private TextView donutToAdd;
@@ -23,6 +36,13 @@ public class donutSelectedActivity extends AppCompatActivity {
 
     private Spinner donutOrderQuantity;
 
+    /**
+     * This method overrides the onCreate method
+     * to set the contentview and set up all of the
+     * xml objects
+     *
+     * @param savedInstanceState current state of program
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -35,20 +55,32 @@ public class donutSelectedActivity extends AppCompatActivity {
         addDonutToOrderButton = findViewById(R.id.addDonutToOrderButton);
         Intent intent = getIntent();
         addDonutToOrderButton.setText("Add");
-        donutPrice.setText("Price: $" +   intent.getStringExtra("DONUT"));
-        setAddDonutToOrderButton(findViewById(R.id.addDonutToOrderButton));
-        createViews();
+        donutPrice.setText(intent.getStringExtra("DONUT"));
+        AddDonutToOrderButton(findViewById(R.id.addDonutToOrderButton));
+       // createViews();
+        Integer[] items = new Integer[]{1,2,3,4,5,6,7,8,9,10,11,12};
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+
+        donutOrderQuantity.setAdapter(adapter);
+        donutOrderQuantity.setSelection(0);
+
+
         donutToAdd.setText(getIntent().getStringExtra("DONUTFLAVORSELECTED")
-                + " " +getIntent().getStringExtra("DONUTTYPESELECTED"));
+                + "\n" +getIntent().getStringExtra("DONUTTYPESELECTED"));
 
     }
 
-    private void setAddDonutToOrderButton(@NonNull View itemView){
-
+    /**
+     * This method has an OnclickListener
+     * used for the Add button. When it's clicked
+     * an alert dialog pops up to confirm choice
+     * to add the selected donut to an Order Object
+     *
+     * @param itemView current View information
+     */
+    private void AddDonutToOrderButton(@NonNull View itemView){
 
         addDonutToOrderButton.setOnClickListener(view -> {
-
-
 
             AlertDialog.Builder alert = new AlertDialog.Builder(itemView.getContext());
             alert.setTitle("Add to order");
@@ -56,15 +88,10 @@ public class donutSelectedActivity extends AppCompatActivity {
                     getIntent().getStringExtra("DONUTFLAVORSELECTED"), 1);
 
             newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+1);
-
             alert.setMessage(newDonut.toString());
-
             alert.setPositiveButton("yes", (dialogInterface, which) -> {
-
                 addItem();
                 Toast.makeText(itemView.getContext(), newDonut + " added." ,Toast.LENGTH_LONG).show();
-
-
             }).setNegativeButton("no", (dialogInterface, which) -> {
 
                 if (newDonut.getQuantity() == 1){
@@ -79,19 +106,15 @@ public class donutSelectedActivity extends AppCompatActivity {
             });
             AlertDialog dialog = alert.create();
             dialog.show();
-
         });
     }
 
-    public void createViews(){
-        Integer[] items = new Integer[]{1,2,3,4,5,6,7,8,9,10,11,12};
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
-
-        donutOrderQuantity.setAdapter(adapter);
-        donutOrderQuantity.setSelection(0);
-
-    }
-
+    /**
+     * Creates the chosen Donut Object
+     * and adds it to the Order
+     * or increments the quantity if
+     * the Donut already exists in the Order
+     */
     public void addItem() {
 
         Donut newDonut = new Donut(getIntent().getStringExtra("DONUTTYPESELECTED"), getIntent().getStringExtra("DONUTFLAVORSELECTED"), 1);

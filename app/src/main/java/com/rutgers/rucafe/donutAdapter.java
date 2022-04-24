@@ -42,7 +42,7 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
         holder.donutType.setText(donuts.get(position).getDonutType());
         double d = donuts.get(position).itemPrice();
         String s = String.valueOf(d);
-        holder.donutPrice.setText(s);
+        holder.donutPrice.setText("Price per: $" +s);
         holder.donutImage.setImageResource(donuts.get(position).getImage());
     }
 

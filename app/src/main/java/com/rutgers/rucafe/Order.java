@@ -5,10 +5,10 @@ import java.util.ArrayList;
  * Class that represents an Order Object
  *
  * Methods within this class can construct an Order Object,
- * add and remove an Object from the Order Object's ObservableList,
+ * add and remove an Object from the Order Object's Arraylist,
  * calculate the price of an Order with or without tax,
  * get the Order Object's order number, get the Order Object's quantity,
- * get the Order Object's ObservableList, set the Order OBject's order number,
+ * get the Order Object's ArrayList, set the Order Object's order number,
  * and represent an Order Object as a String
  *
  * @author Mark Holleran, Abhitej Bokka
@@ -25,7 +25,7 @@ public class Order implements Customizable {
     public Order() { order = new  ArrayList<MenuItem>();}
 
     /**
-     * Adds a MenuItem Object to the ObservableList of MenuItems of the Order Object
+     * Adds a MenuItem Object to the ArrayList of MenuItems of the Order Object
      *
      * @param obj MenuItem Object to be added
      * @return True if MenuItem Object is added, false otherwise
@@ -39,7 +39,7 @@ public class Order implements Customizable {
     }
 
     /**
-     * Removes a MenuItem Object from the ObservableList of MenuItems of the Order Object
+     * Removes a MenuItem Object from the ArrayList of MenuItems of the Order Object
      *
      * @param obj MenuItem Object to be removed
      * @return True if MenuItem Object is removed, false otherwise
@@ -53,7 +53,7 @@ public class Order implements Customizable {
     }
 
     /**
-     * Returns the combined Price of every MenuItem Object in the Order Object's ObservableList
+     * Returns the combined Price of every MenuItem Object in the Order Object's ArrayList
      *
      * @return Double representing the total Price of an Order Object
      */
@@ -66,7 +66,7 @@ public class Order implements Customizable {
     }
 
     /**
-     * Returns the combined Price of every MenuItem Object in the Order Object's ObservableList with tax
+     * Returns the combined Price of every MenuItem Object in the Order Object's ArrayList with tax
      *
      * @return Double representing the total Price with tax of an Order Object
      */
@@ -75,9 +75,9 @@ public class Order implements Customizable {
     }
 
     /**
-     * Returns ObservableList parameter of the Order Object
+     * Returns ArrayList parameter of the Order Object
      *
-     * @return ObservableList containing MenuItems
+     * @return ArrayList containing MenuItems
      */
     public ArrayList<MenuItem> getOrder() {
         return order;
@@ -97,17 +97,17 @@ public class Order implements Customizable {
      *
      * @return String representation of the Order containing
      * the order number and all the Order's MenuItems within
-     * it's ObservableList
+     * it's ArrayList
      */
     public String toString() {
         return("Order: " + orderNumber + " " + order.toString() + "\nTotal: $"
                 + String.format("%.2f", this.orderPriceTax()));
     }
 
-    public String toStringWithoutOrderNumber (){
-
-        return order.toString();
-
-
-    }
+    /**
+     * Returns String representation of an Order Object without the Order Number
+     * @return String representation of the Order containing all the Order's
+     * MenuItems within it's ArrayList
+     */
+    public String toStringWithoutOrderNumber (){return order.toString();}
 }

@@ -9,8 +9,8 @@ import java.util.ArrayList;
  * Class that represents a StoreOrders Object
  *
  * Methods within this class can create a StoreOrders Object,
- * return the ObservableList of Order Objects within a StoreOrders Object,
- * add and remove an Order Object to/from the ObservableList,
+ * return the ArrayLists of Order Objects within a StoreOrders Object,
+ * add and remove an Order Object to/from the ArrayList,
  * and export all Order Objects to a text file
  *
  * @author Mark Holleran, Abhitej Bokka
@@ -27,10 +27,10 @@ public class StoreOrders implements Customizable {
     }
 
     /**
-     * Adds an Order Object to the ObservableList of a StoreOrders Object
+     * Adds an Order Object to the ArrayLists of a StoreOrders Object
      *
      * @param obj Order Object to be added
-     * @return True if Order Object was added from the ObservableList of a StoreOrders Object, false otherwise
+     * @return True if Order Object was added from the ArrayList of a StoreOrders Object, false otherwise
      */
     @Override
     public boolean add(Object obj) {
@@ -43,10 +43,10 @@ public class StoreOrders implements Customizable {
     }
 
     /**
-     * Removes an Order Object from the ObservableList of a StoreOrders Object
+     * Removes an Order Object from the ArrayList of a StoreOrders Object
      *
      * @param obj Order Object to be removed
-     * @return True if Order Object was removed from the ObservableList of a StoreOrders Object, false otherwise
+     * @return True if Order Object was removed from the ArrayList of a StoreOrders Object, false otherwise
      */
     public boolean remove(Object obj) {
 
@@ -58,22 +58,21 @@ public class StoreOrders implements Customizable {
     }
 
     /**
-     * Returns the Observable parameter of a StoreOrders Object
+     * Returns the ArrayList parameter of a StoreOrders Object
      *
-     * @return ObservableList of Order Objects
+     * @return ArrayList of Order Objects
      */
     public ArrayList<Order> getOrderList() {
         return this.orders;
     }
 
     /**
-     * Exports all Order Objects within the StoreOrder's ObservableList to a text file
+     * Exports all Order Objects within the StoreOrder's ArrayList to a text file
      *
      * @param file File to be written to
      * @return True if file successfully written to, false otherwise
      */
     public boolean export(File file) {
-
 
         try {
             FileWriter output = new FileWriter(file);
@@ -90,7 +89,7 @@ public class StoreOrders implements Customizable {
     }
 
     /**
-     * Exports all Order Objects within the StoreOrder's ObservableList to a text file without Price
+     * Exports all Order Objects within the StoreOrder's ArrayList to a text file without Price
      *
      * @param file File to be written to
      * @return True if file successfully written to, false otherwise

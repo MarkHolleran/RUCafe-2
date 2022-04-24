@@ -13,23 +13,49 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+
+/**
+ * This class represents the Adapter
+ * that resides within a Recyclerview
+ * in the donut_order class
+ *
+ * @author Mark Holleran, Abhitej Bokka
+ */
 public class objectAdapter extends RecyclerView.Adapter<objectAdapter.objectViewHolder> {
     private final ArrayList<?> itemArrayList;
     private OnItemClickListener listener;
 
+    /**
+     * Needed for when the Object's delete button
+     * is pressed
+     */
     public interface OnItemClickListener {
         void onDeleteClick(int position);
     }
 
-
+    /**
+     * Will alert the listener when the Item is clicked
+     *
+     * @param listener Waits for button click
+     */
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
 
+    /**
+     * This is the Object displayed within the RecyclerView
+     */
     public static class objectViewHolder extends RecyclerView.ViewHolder {
         public TextView textView;
         public ImageView deleteImage;
 
+        /**
+         * Assigns a textview & button to it's xml counterpart
+         * and executes commands when the listener is activated
+         *
+         * @param itemView View representing Object witin RecyclerView
+         * @param listener Sends data when Button is clicked
+         */
         public objectViewHolder(View itemView, OnItemClickListener listener) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
@@ -60,10 +86,23 @@ public class objectAdapter extends RecyclerView.Adapter<objectAdapter.objectView
         }
     }
 
+    /**
+     * Addapts ArrayList to be usable in the RecyclerView
+     *
+     * @param list ArrayList to be adapted for use in the RecyclerView
+     */
     public objectAdapter(ArrayList<?> list) {
         itemArrayList = list;
     }
 
+    /**
+     * Creates a new RecyclerView ViewHolder
+     * and initializes some fields used by RecyclerView
+     *
+     * @param parent ViewGroup which the new View will be added to
+     * @param viewType ViewType of the new View
+     * @return ObjectViewHolder
+     */
     @NonNull
     @Override
     public objectViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -71,13 +110,27 @@ public class objectAdapter extends RecyclerView.Adapter<objectAdapter.objectView
         return new objectViewHolder(viewss, listener);
     }
 
+    /**
+     * Sets the holder Object's text to the item
+     * in the ArrayList that was selected
+     *
+     * @param holder Holder object
+     * @param position Selected object in an ArrayList
+     */
     @Override
     public void onBindViewHolder(objectViewHolder holder, int position) {
         holder.textView.setText(itemArrayList.get(position).toString());
     }
 
+    /**
+     * Although never used, this method is implemented
+     * to satisfy all the requirements for creating
+     * the object view holder
+     *
+     * @return Integer representing ArrayList size
+     */
     @Override
-    public int getItemCount() {
-        return itemArrayList.size();
-    }
+    public int getItemCount() { return itemArrayList.size();}
+
+
 }

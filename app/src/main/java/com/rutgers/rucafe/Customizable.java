@@ -8,7 +8,7 @@ package com.rutgers.rucafe;
 public interface Customizable {
 
     /**
-     * Serves multiple purposes of adding objects to observable lists
+     * Serves multiple purposes of adding objects to Array lists
      * Used to add an Object like a MenuItem to an order or Addins on a Coffee
      *
      * @param obj Object containing the required object to be added to a list
@@ -18,7 +18,7 @@ public interface Customizable {
     boolean add(Object obj);
 
     /**
-     * Serves multiple purposes of adding objects to observable lists
+     * Serves multiple purposes of adding objects to Array lists
      * Used to remove an Object like a MenuItem from an order or Addins on a Coffee
      *
      * @param obj Object containing the required object to be removed from a list

@@ -20,12 +20,13 @@
 
     <TextView
         android:id="@+id/storeOrders"
-        android:layout_width="91dp"
-        android:layout_height="42dp"
+        android:layout_width="144dp"
+        android:layout_height="33dp"
         android:layout_marginStart="144dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="145dp"
         android:text="@string/StoreOrders"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
