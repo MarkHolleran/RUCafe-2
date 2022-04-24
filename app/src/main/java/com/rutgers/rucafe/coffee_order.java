@@ -17,6 +17,14 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+/**
+ * Class that represents the functionality of interface for ordering a Coffee
+ *
+ * Within this class are all the components of creating a
+ * coffee order and their corresponding functionality
+ *
+ * @author Mark Holleran, Abhitej Bokka
+ */
 public class coffee_order extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static Order coffeeOrders = new Order();
@@ -37,6 +45,11 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     public static final String CARAMEL = "Caramel";
     public static final String WHIPPEDCREAM = "Whipped Cream";
 
+    /**
+     * Initializes var
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

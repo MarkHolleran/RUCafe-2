@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Text;
 
 public class donutSelectedActivity extends AppCompatActivity {
-   // public static Order donutOrder = new Order();
     private Button addDonutToOrderButton;
     private TextView donutToAdd;
     private TextView donutPrice;
@@ -66,19 +65,16 @@ public class donutSelectedActivity extends AppCompatActivity {
                 Toast.makeText(itemView.getContext(), newDonut + " added." ,Toast.LENGTH_LONG).show();
 
 
-            }).setNegativeButton("no", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int which) {
+            }).setNegativeButton("no", (dialogInterface, which) -> {
 
-                    if (newDonut.getQuantity() == 1){
-                        Toast.makeText(itemView.getContext(),
-                                newDonut+  " not added.",
-                                Toast.LENGTH_LONG).show();
-                    }else {
-                        Toast.makeText(itemView.getContext(),
-                                newDonut + " were not added.",
-                                Toast.LENGTH_LONG).show();
-                    }
+                if (newDonut.getQuantity() == 1){
+                    Toast.makeText(itemView.getContext(),
+                            newDonut+  " not added.",
+                            Toast.LENGTH_LONG).show();
+                }else {
+                    Toast.makeText(itemView.getContext(),
+                            newDonut + " were not added.",
+                            Toast.LENGTH_LONG).show();
                 }
             });
             AlertDialog dialog = alert.create();
@@ -113,7 +109,6 @@ public class donutSelectedActivity extends AppCompatActivity {
         if (!duplicateDonutFound){
                 newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+1);
             donut_order.donutOrder.add(newDonut);
-            }
-        
+        }
     }
 }
