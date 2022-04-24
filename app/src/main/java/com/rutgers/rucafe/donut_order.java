@@ -97,10 +97,7 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
 
         String [] donutFlavors = getResources().getStringArray(R.array.donut_names);
         String [] donutTypes = getResources().getStringArray(R.array.donut_types);
-        /* Add the items to the ArrayList.
-         * Note that I use hardcoded prices for demo purpose. This should be replace by other
-         * data sources.
-         */
+
         for (int i = 0; i < donutFlavors.length; i++) {
             donuts.add(new Donut(donutTypes[i] ,donutFlavors[i]  ,donutImages[i] ));
         }
@@ -119,11 +116,9 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         updateAllOrders();
     }
 
-    //this doesn't do anything
     public void  onItemSelected(AdapterView<?> parent, View view, int position, long id){
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
-
     }
 
     public void onNothingSelected(AdapterView<?> parent) {

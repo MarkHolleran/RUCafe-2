@@ -109,8 +109,6 @@ public class donutSelectedActivity extends AppCompatActivity {
                 newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+1);
             donut_order.donutOrder.add(newDonut);
             }
-
-
-        //donut_order.donutOrder = donutOrder;
+        
     }
 }
