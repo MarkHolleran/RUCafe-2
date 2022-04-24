@@ -18,7 +18,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 /**
- * Class that represents the functionality of interface for ordering a Coffee
+ * Class that represents the functionality of the interface for ordering a Coffee
  *
  * Within this class are all the components of creating a
  * coffee order and their corresponding functionality
@@ -46,9 +46,9 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     public static final String WHIPPEDCREAM = "Whipped Cream";
 
     /**
-     * Initializes var
+     * Initializes variables and creates buttons and the view to order Coffee.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState Bundle just helps pass saved information from previous states
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +64,9 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
+    /**
+     * Method that sets up all the IDs of buttons and relevant text output.
+     */
     private void createButtons(){
         addButton = findViewById(R.id.addButton);
         spinner = findViewById(R.id.spinnerCoffee);
@@ -77,6 +80,9 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    /**
+     * Method that helps update the balance of an order when changes are made.
+     */
     private void updateBalance(){
         double sum = 0;
         for(MenuItem items: coffeeOrders.getOrder()){
@@ -86,6 +92,11 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         coffeeAdapter.notifyDataSetChanged();
     }
 
+    /**
+     * When the Add button is pressed, a Coffee Object is made
+     * and added to the RecyclerView of Coffee Objects
+     * and the current total is updated
+     */
     public void addItem(){
         Resources res = getResources();
         String size = res.getStringArray(R.array.coffeeSizes)[spinner.getSelectedItemPosition()];
@@ -116,6 +127,14 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         whippedCream.setChecked(false);
     }
 
+
+    /**
+     *
+     * Method that clears and then determines what toppings
+     * the customer asked for on their coffee.
+     *
+     * @param toppings Arraylist to be used to store the toppings requested.
+     */
     private void checkToppings(ArrayList<String> toppings){
         toppings.remove(CREAM);
         toppings.remove(SYRUP);
@@ -137,12 +156,21 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
+    /**
+     * Removes a selected Coffee Object from the RecyclerView
+     * and updates the RecyclerView along with the total.
+     *
+     * @param position indicating the specific Coffee to remove.
+     */
     public void removeItem(int position) {
         coffeeOrders.getOrder().remove(position);
         coffeeAdapter.notifyItemRemoved(position);
         updateBalance();
     }
 
+    /**
+     * Method that sets up the RecyclerView and lets adapter convert the Order.
+     */
     public void createViews(){
         Spinner spinner = findViewById(R.id.spinnerCoffee);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -162,12 +190,27 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         coffeeAdapter.setOnItemClickListener(this::removeItem);
     }
 
+
+    /**
+     *
+     * Method to show a Toast of which size is selected by user
+     *
+     * @param parent AdapterView containing the location of selection
+     * @param view View where selection happened
+     * @param position integer containing the position of size needed to be displayed.
+     * @param id The row of the item selected
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Method that allows us to perform an action if no selection happens.
+     *
+     * @param parent AdapterView containing the location of selection
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 

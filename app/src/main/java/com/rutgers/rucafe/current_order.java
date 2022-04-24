@@ -12,6 +12,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+/**
+ * Class that represents the functionality of the interface for an Order Object
+ *
+ * Within this class are all the components of editing an Order
+ * and their corresponding functionality
+ *
+ * @author Mark Holleran, Abhitej Bokka
+ */
 public class current_order extends AppCompatActivity {
 
     public static Order allOrders = new Order();
@@ -27,6 +36,11 @@ public class current_order extends AppCompatActivity {
 
     private Button placeOrder;
 
+    /**
+     * Initializes variables and creates buttons and the view to edit an Order.
+     *
+     * @param savedInstanceState Bundle just helps pass saved information from previous states
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +55,10 @@ public class current_order extends AppCompatActivity {
 
 
         placeOrder.setOnClickListener(new View.OnClickListener() {
+            /**
+             * 
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 if (allOrders.getOrder().isEmpty()) {
@@ -62,9 +80,7 @@ public class current_order extends AppCompatActivity {
 
                     AlertDialog dialog = alert.create();
                     dialog.show();
-
                 }
-
 
             }
         });

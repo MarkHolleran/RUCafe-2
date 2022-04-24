@@ -20,7 +20,6 @@ import java.util.ArrayList;
 class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
     private Context context;
     private ArrayList<Donut> donuts;
-    private ImageView donutImage;
     public donutAdapter(Context context, ArrayList<Donut> donuts){
         this.context = context;
         this.donuts = donuts;
