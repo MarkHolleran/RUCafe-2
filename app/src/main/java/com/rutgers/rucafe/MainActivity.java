@@ -5,8 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+/**
+ * This class represents the Main Activity used to act as a
+ * home screen to the app and showcase the different activities
+ * that can be performed to create a successful order.
+ *
+ * @author Mark Holleran, Abhitej Bokka
+ */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Initializes variables and creates Buttons to view Activities to order Items.
+     *
+     * @param savedInstanceState Bundle just helps pass saved information from previous states.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,15 +1,12 @@
 package com.rutgers.rucafe;
 
-
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,7 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
+/**
+ * This class represents the Adapter
+ * that resides within a Recyclerview
+ * in the donut_order class.
+ *
+ * @author Mark Holleran, Abhitej Bokka
+ */
+public class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
     private Context context;
     private ArrayList<Donut> donuts;
     public donutAdapter(Context context, ArrayList<Donut> donuts){
@@ -25,6 +29,14 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
         this.donuts = donuts;
     }
 
+    /**
+     * Creates a new RecyclerView ViewHolder
+     * and initializes some fields used by RecyclerView
+     *
+     * @param parent ViewGroup which the new View will be added to
+     * @param viewType ViewType of the new View
+     * @return ObjectViewHolder containing View
+     */
     @NonNull
     @Override
     public donutHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,6 +47,13 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
         return new donutHolder(view);
     }
 
+    /**
+     * Sets the holder Object's text to the item
+     * in the ArrayList that was selected
+     *
+     * @param holder Holder object
+     * @param position Selected object in an ArrayList
+     */
     @Override
     public void onBindViewHolder(@NonNull donutHolder holder, int position) {
 
@@ -46,6 +65,13 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
         holder.donutImage.setImageResource(donuts.get(position).getImage());
     }
 
+    /**
+     * This method is implemented
+     * to satisfy all the requirements for creating
+     * the object view holder
+     *
+     * @return Integer representing ArrayList size
+     */
     @Override
     public int getItemCount() {
         return donuts.size();
@@ -58,6 +84,11 @@ class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder> {
         private ConstraintLayout parentLayout;
 
 
+        /**
+         * Holds data for donut and intents to store.
+         *
+         * @param donutView View for the Donut to be used with.
+         */
         public donutHolder (@NonNull View donutView){
 
             super(donutView);

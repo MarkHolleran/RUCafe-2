@@ -7,9 +7,32 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
+/**
+ * This class represents the Activity used to
+ * display the functions of the app made.
+ *
+ * @author Mark Holleran, Abhitej Bokka
+ */
 public class aboutActivity extends AppCompatActivity {
 
+    public static final String[] DESCRIPTIONS = {
+            "This program can...",
+            "Customize the Type & Flavor of a Donut",
+            "Select Size and Addins of a Coffee",
+            "Add and Remove Donut and Coffee Orders to a List",
+            "Calculate the Subtotal & Total of the Order",
+            "And store All Orders in a Store Orders List",
+            "",
+            "This Program was made by Abhitej Bokka & Mark Holleran"
+    };
+
+    /**
+     * Initializes variables and creates Adapter to view descriptions.
+     *
+     * @param savedInstanceState Bundle just helps pass saved information from previous states.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,15 +42,7 @@ public class aboutActivity extends AppCompatActivity {
         programDescriptionListView.setBackgroundColor(Color.GRAY);
 
         ArrayList<String> description = new ArrayList<>();
-        description.add("This program can...");
-        description.add("Customize the Type & Flavor of a Donut");
-        description.add("Select Size and Addins of a Coffee");
-        description.add("Add and Remove Donut and Coffee Orders to a List");
-        description.add("Calculate the Subtotal & Total of the Order");
-        description.add("and store All Orders in a Store Orders List");
-
-        description.add("");
-        description.add("This Program was made by Abhitej Bokka & Mark Holleran");
+        Collections.addAll(description, DESCRIPTIONS);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
                 android.R.layout.simple_list_item_1,description);
