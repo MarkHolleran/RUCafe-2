@@ -14,10 +14,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Text;
+
 public class donutSelectedActivity extends AppCompatActivity {
    // public static Order donutOrder = new Order();
     private Button addDonutToOrderButton;
     private TextView donutToAdd;
+    private TextView donutPrice;
 
     private Spinner donutOrderQuantity;
 
@@ -28,10 +31,12 @@ public class donutSelectedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_donut_selected);
         donutOrderQuantity = findViewById(R.id.donutQuantitySpinner);
         donutToAdd = findViewById(R.id.donutToAdd);
+        donutPrice = findViewById(R.id.donutPriceInDonutActivity);
 
         addDonutToOrderButton = findViewById(R.id.addDonutToOrderButton);
         Intent intent = getIntent();
-        addDonutToOrderButton.setText(intent.getStringExtra("DONUT"));
+        addDonutToOrderButton.setText("Add");
+        donutPrice.setText("Price: $" +   intent.getStringExtra("DONUT"));
         setAddDonutToOrderButton(findViewById(R.id.addDonutToOrderButton));
         createViews();
         donutToAdd.setText(getIntent().getStringExtra("DONUTFLAVORSELECTED")

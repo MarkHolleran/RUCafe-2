@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/donutToAdd"
-        android:layout_width="159dp"
-        android:layout_height="55dp"
+        android:layout_width="206dp"
+        android:layout_height="57dp"
         android:layout_marginTop="228dp"
         android:layout_marginEnd="124dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,4 +57,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/apple" />
+
+    <TextView
+        android:id="@+id/donutPriceInDonutActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/addDonutToOrderButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donutToAdd"
+        app:layout_constraintVertical_bias="0.558" />
 </androidx.constraintlayout.widget.ConstraintLayout>
