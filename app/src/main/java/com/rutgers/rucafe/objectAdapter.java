@@ -13,11 +13,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-
 /**
  * This class represents the Adapter
  * that resides within a Recyclerview
- * in the donut_order class
+ * in multiple classes.
  *
  * @author Mark Holleran, Abhitej Bokka
  */
@@ -53,7 +52,7 @@ public class objectAdapter extends RecyclerView.Adapter<objectAdapter.objectView
          * Assigns a textview & button to it's xml counterpart
          * and executes commands when the listener is activated
          *
-         * @param itemView View representing Object witin RecyclerView
+         * @param itemView View representing Object within RecyclerView
          * @param listener Sends data when Button is clicked
          */
         public objectViewHolder(View itemView, OnItemClickListener listener) {
@@ -101,7 +100,7 @@ public class objectAdapter extends RecyclerView.Adapter<objectAdapter.objectView
      *
      * @param parent ViewGroup which the new View will be added to
      * @param viewType ViewType of the new View
-     * @return ObjectViewHolder
+     * @return ObjectViewHolder containing View
      */
     @NonNull
     @Override
@@ -123,7 +122,7 @@ public class objectAdapter extends RecyclerView.Adapter<objectAdapter.objectView
     }
 
     /**
-     * Although never used, this method is implemented
+     * This method is implemented
      * to satisfy all the requirements for creating
      * the object view holder
      *
