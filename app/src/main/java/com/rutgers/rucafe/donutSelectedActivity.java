@@ -34,10 +34,10 @@ public class donutSelectedActivity extends AppCompatActivity {
     private TextView donutToAdd;
     private TextView donutPrice;
     private Spinner donutOrderQuantity;
-    private int DEFAULT_SPINNER_SELECTION = 1;
-    private int ONE_DONUT_TO_BE_ADDED = 1;
-    private int SPINNER_OFFSET = 1;
-    private Integer[] Items = {1,2,3,4,5,6,7,8,9,10,11,12};
+    private static final int DEFAULT_SPINNER_SELECTION = 1;
+    private static final int ONE_DONUT_TO_BE_ADDED = 1;
+    private static final int SPINNER_OFFSET = 1;
+    private static final Integer[] ITEMS = {1,2,3,4,5,6,7,8,9,10,11,12};
 
     /**
      * This method overrides the onCreate method
@@ -59,10 +59,10 @@ public class donutSelectedActivity extends AppCompatActivity {
         addDonutToOrderButton.setText("Add");
         donutPrice.setText(intent.getStringExtra("DONUT"));
         AddDonutToOrderButton(findViewById(R.id.addDonutToOrderButton));
-        Integer[] items = Items;
+        Integer[] items = ITEMS;
         ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
         donutOrderQuantity.setAdapter(adapter);
-        donutOrderQuantity.setSelection(DEFAULT_SPINNER_SELECTION);
+        //donutOrderQuantity.setSelection(DEFAULT_SPINNER_SELECTION);
         donutToAdd.setText(getIntent().getStringExtra("DONUTFLAVORSELECTED")
                 + "\n" +getIntent().getStringExtra("DONUTTYPESELECTED"));
     }

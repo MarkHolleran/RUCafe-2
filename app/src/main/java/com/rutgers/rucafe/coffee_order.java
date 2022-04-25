@@ -27,7 +27,6 @@ import java.util.ArrayList;
  */
 public class coffee_order extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-
     private objectAdapter coffeeAdapter;
     private Button addButton;
     private Spinner spinner;
