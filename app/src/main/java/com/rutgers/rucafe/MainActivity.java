@@ -15,11 +15,6 @@ import android.widget.ImageView;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView donutMainMenuImage;
-    private ImageView x;
-    private ImageView c;
-    private ImageView z;
-
     /**
      * Initializes variables and creates Buttons to view Activities to order Items.
      *
