@@ -33,8 +33,11 @@ public class donutSelectedActivity extends AppCompatActivity {
     private Button addDonutToOrderButton;
     private TextView donutToAdd;
     private TextView donutPrice;
-
     private Spinner donutOrderQuantity;
+    private int DEFAULT_SPINNER_SELECTION = 1;
+    private int ONE_DONUT_TO_BE_ADDED = 1;
+    private int SPINNER_OFFSET = 1;
+    private Integer[] Items = {1,2,3,4,5,6,7,8,9,10,11,12};
 
     /**
      * This method overrides the onCreate method
@@ -51,19 +54,17 @@ public class donutSelectedActivity extends AppCompatActivity {
         donutOrderQuantity = findViewById(R.id.donutQuantitySpinner);
         donutToAdd = findViewById(R.id.donutToAdd);
         donutPrice = findViewById(R.id.donutPriceInDonutActivity);
-
         addDonutToOrderButton = findViewById(R.id.addDonutToOrderButton);
         Intent intent = getIntent();
         addDonutToOrderButton.setText("Add");
         donutPrice.setText(intent.getStringExtra("DONUT"));
         AddDonutToOrderButton(findViewById(R.id.addDonutToOrderButton));
-        Integer[] items = new Integer[]{1,2,3,4,5,6,7,8,9,10,11,12};
+        Integer[] items = Items;
         ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
         donutOrderQuantity.setAdapter(adapter);
-        donutOrderQuantity.setSelection(0);
+        donutOrderQuantity.setSelection(DEFAULT_SPINNER_SELECTION);
         donutToAdd.setText(getIntent().getStringExtra("DONUTFLAVORSELECTED")
                 + "\n" +getIntent().getStringExtra("DONUTTYPESELECTED"));
-
     }
 
     /**
@@ -90,7 +91,7 @@ public class donutSelectedActivity extends AppCompatActivity {
                 Toast.makeText(itemView.getContext(), newDonut + " added." ,Toast.LENGTH_LONG).show();
             }).setNegativeButton("no", (dialogInterface, which) -> {
 
-                if (newDonut.getQuantity() == 1){
+                if (newDonut.getQuantity() == ONE_DONUT_TO_BE_ADDED){
                     Toast.makeText(itemView.getContext(),
                             newDonut+  " not added.",
                             Toast.LENGTH_LONG).show();
@@ -114,8 +115,7 @@ public class donutSelectedActivity extends AppCompatActivity {
     public void addItem() {
 
         Donut newDonut = new Donut(getIntent().getStringExtra("DONUTTYPESELECTED"), getIntent().getStringExtra("DONUTFLAVORSELECTED"));
-        newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+1);
-
+        newDonut.setQuantity(donutOrderQuantity.getSelectedItemPosition()+SPINNER_OFFSET);
         boolean duplicateDonutFound = false;
 
         for (MenuItem num : donut_order.donutOrder.getOrder()) {

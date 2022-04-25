@@ -24,18 +24,14 @@ public class current_order extends AppCompatActivity {
 
     public static final int NO_BALANCE = 0;
     public static final int INITIAL_NUMBER = 1;
-
-    public static Order allOrders = new Order();
     public static int orderNumber = INITIAL_NUMBER;
-
+    public static Order allOrders = new Order();
     private RecyclerView itemList;
     private objectAdapter itemAdapter;
     private RecyclerView.LayoutManager itemLayout;
-
     private TextView subtotalDisplay;
     private TextView taxDisplay;
     private TextView totalDisplay;
-
     private Button placeOrder;
 
     /**
@@ -47,15 +43,10 @@ public class current_order extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_order);
-
         createButtons();
-
         updateAllOrders();
         updateBalance();
-
         createViews();
-
-
         placeOrder.setOnClickListener(new View.OnClickListener() {
             /**
              * Method that handles a confirmation to place an order.
@@ -67,7 +58,6 @@ public class current_order extends AppCompatActivity {
                 onClickFunctionality(view);
             }
         });
-
         itemAdapter.setOnItemClickListener(this::removeItem);
     }
 
@@ -104,7 +94,7 @@ public class current_order extends AppCompatActivity {
      * containing all MenuItems is added to the StoreOrders Object
      * containing all Orders.
      */
-    private void placeOrder(){
+    private void placeOrder() {
 
         allOrders.setOrderNumber(orderNumber);
         store_orders.storeOrders.getOrderList().add(allOrders);
@@ -115,7 +105,6 @@ public class current_order extends AppCompatActivity {
         startActivity(getIntent());
         updateBalance();
         orderNumber++;
-
     }
 
     /**
@@ -126,21 +115,18 @@ public class current_order extends AppCompatActivity {
         taxDisplay = findViewById(R.id.salesTaxDisplay);
         totalDisplay = findViewById(R.id.totalDisplay);
         placeOrder =  findViewById(R.id.placeOrderButton);
-
     }
 
     /**
      * Method that sets up the RecyclerView and lets adapter convert the Order.
      */
     public void createViews(){
-
         itemList = findViewById(R.id.itemListView);
         itemList.setHasFixedSize(true);
         itemLayout = new LinearLayoutManager(this);
         itemAdapter = new objectAdapter(allOrders.getOrder());
         itemList.setLayoutManager(itemLayout);
         itemList.setAdapter(itemAdapter);
-
     }
 
     /**
@@ -150,23 +136,16 @@ public class current_order extends AppCompatActivity {
      * @param position indicating the specific MenuItem to remove.
      */
     public void removeItem(int position) {
-
-        System.out.println("Before: "+ allOrders.getOrder());
         if(allOrders.getOrder().get(position) instanceof Donut){
             donut_order.donutOrder.remove(allOrders.getOrder().get(position));
         }else{
             coffee_order.coffeeOrders.remove(allOrders.getOrder().get(position));
         }
-
         updateAllOrders();
-
-        System.out.println("After: "+ allOrders.getOrder());
         itemAdapter.notifyItemRemoved(position);
-
         finish();
         startActivity(getIntent());
         updateBalance();
-
     }
 
     /**

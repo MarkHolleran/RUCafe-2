@@ -81,7 +81,6 @@ public class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder>
         private TextView donutType, donutPrice,donutFlavor;
         private ConstraintLayout parentLayout;
 
-
         /**
          * Holds data for donut and intents to store.
          *
@@ -94,7 +93,6 @@ public class donutAdapter extends RecyclerView.Adapter<donutAdapter.donutHolder>
             donutType = donutView.findViewById(R.id.donutType);
             donutPrice = donutView.findViewById(R.id.donutPrice);
             parentLayout = itemView.findViewById(R.id.rowLayout);
-
                 parentLayout.setOnClickListener(view -> {
                 Intent intent = new Intent(donutView.getContext(), donutSelectedActivity.class);
                 intent.putExtra("DONUT", donutPrice.getText());

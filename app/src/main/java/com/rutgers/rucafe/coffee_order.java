@@ -27,11 +27,8 @@ import java.util.ArrayList;
  */
 public class coffee_order extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    public static Order coffeeOrders = new Order();
-    public static final int INITIAL_QUANTITY = 1;
 
     private objectAdapter coffeeAdapter;
-
     private Button addButton;
     private Spinner spinner;
     private CheckBox cream;
@@ -40,12 +37,14 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     private CheckBox whippedCream;
     private CheckBox milk;
     private TextView subtotal;
-
     public static final String CREAM = "Cream";
     public static final String SYRUP = "Syrup";
     public static final String CARAMEL = "Caramel";
     public static final String WHIPPEDCREAM = "Whipped Cream";
     public static final String MILK = "Milk";
+    public static Order coffeeOrders = new Order();
+    public static final int INITIAL_QUANTITY = 1;
+    public static final int INITIAL_PRICE = 0;
 
     /**
      * Initializes variables and creates buttons and the view to order Coffee.
@@ -56,10 +55,8 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee_order);
-
         createViews();
         createButtons();
-
         addButton.setOnClickListener(view -> {
             addItem();
             updateBalance();
@@ -77,18 +74,16 @@ public class coffee_order extends AppCompatActivity implements AdapterView.OnIte
         caramel = findViewById(R.id.caramelCoffee);
         whippedCream = findViewById(R.id.whippedCreamCoffee);
         milk = findViewById(R.id.milkCoffee);
-
         subtotal = findViewById(R.id.coffeeSubTotal);
         subtotal.setText(String.format("Subtotal: $"+"%.2f", coffeeOrders.orderPrice()));
         coffeeAdapter.notifyDataSetChanged();
-
     }
 
     /**
      * Method that helps update the balance of an order when changes are made.
      */
     private void updateBalance(){
-        double sum = 0;
+        double sum = INITIAL_PRICE;
         for(MenuItem items: coffeeOrders.getOrder()){
             sum += items.itemPrice();
         }

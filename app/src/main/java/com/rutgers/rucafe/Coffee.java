@@ -17,6 +17,8 @@ public class Coffee extends MenuItem implements Customizable {
     public static final double PRICE_OF_SIZE_GRANDE = 2.49;
     public static final double PRICE_OF_SIZE_VENTI = 2.89;
     public static final double PRICE_OF_SINGLE_ADDIN = .30;
+    public static final double COFFEE_ADDINS_QUANTITY_THRESHOLD = 0;
+    public static final double COFFEE_QUANTITY_THRESHOLD = 1;
 
     public static final String SHORT = "Short";
     public static final String TALL = "Tall";
@@ -133,10 +135,10 @@ public class Coffee extends MenuItem implements Customizable {
     @Override
     public String toString() {
         StringBuilder coffeeToString = new StringBuilder(this.getQuantity() + " " + this.getCoffeeSize() + " Coffee");
-        if (this.getQuantity() > 1) {
+        if (this.getQuantity() > COFFEE_QUANTITY_THRESHOLD) {
             coffeeToString.append("s");
         }
-        if (getCoffeeAddins().size() > 0) {
+        if (getCoffeeAddins().size() > COFFEE_ADDINS_QUANTITY_THRESHOLD) {
             coffeeToString.append(" with:");
             for (String s : getCoffeeAddins()) {
                 coffeeToString.append(" ").append(s);

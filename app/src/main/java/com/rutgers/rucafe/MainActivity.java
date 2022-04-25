@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // donutMainMenuImage.setImageResource(R.drawable.donutmainmenuimage);
-
         Button donutOrderButton = findViewById(R.id.OrderDonutButton);
         donutOrderButton.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, donut_order.class)));
@@ -57,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         Button aboutProgram = findViewById(R.id.aboutButton);
         aboutProgram.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, aboutActivity.class)));
-        // donutMainMenuImage.setImageResource(R.drawable.donutmainmenuimage);
-
     }
 
 }

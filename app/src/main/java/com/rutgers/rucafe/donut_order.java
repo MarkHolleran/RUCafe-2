@@ -23,7 +23,6 @@ import java.util.ArrayList;
 public class donut_order extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static Order donutOrder = new Order();
-
     private RecyclerView donutOrderRecyclerView;
     private RecyclerView.LayoutManager donutLayout;
     private objectAdapter coffeeAdapter;
@@ -39,19 +38,15 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donut_order);
-
         RecyclerView rcview = findViewById(R.id.rcView_menu);
         setupMenuItems();
         createViews();
-
         donutAdapter adapter = new donutAdapter(this,donuts);
         rcview.setAdapter(adapter);
         rcview.setLayoutManager(new LinearLayoutManager(this));
-
         coffeeAdapter = new objectAdapter(donutOrder.getOrder());
         donutOrderRecyclerView.setLayoutManager(donutLayout);
         donutOrderRecyclerView.setAdapter(coffeeAdapter);
-
         donutOrderSubtotal.setText(String.format("$"+"%.2f", donutOrder.orderPrice()));
         updateBalance();
     }
@@ -88,14 +83,10 @@ public class donut_order extends AppCompatActivity implements AdapterView.OnItem
         coffeeAdapter = new objectAdapter(donutOrder.getOrder());
         donutOrderRecyclerView.setLayoutManager(donutLayout);
         donutOrderRecyclerView.setAdapter(coffeeAdapter);
-
         coffeeAdapter.setOnItemClickListener(position -> {
             removeItem(position);
             updateAllOrders();
             updateBalance();
-
-            System.out.println(donutOrder.getOrder().toString());
-
         });
     }
 

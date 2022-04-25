@@ -11,7 +11,6 @@ public class Donut extends MenuItem  {
 
     private String flavor;
     private String type;
-
     public static final String YEAST = "Yeast Donut";
     public static final String CAKE = "Cake Donut";
     public static final String HOLE = "Donut Hole";

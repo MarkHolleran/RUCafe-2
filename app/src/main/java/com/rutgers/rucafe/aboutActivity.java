@@ -37,16 +37,12 @@ public class aboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-
         ListView programDescriptionListView = findViewById(R.id.aboutProgramInformation);
         programDescriptionListView.setBackgroundColor(Color.GRAY);
-
         ArrayList<String> description = new ArrayList<>();
         Collections.addAll(description, DESCRIPTIONS);
-
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
                 android.R.layout.simple_list_item_1,description);
         programDescriptionListView.setAdapter(arrayAdapter);
-
     }
 }
