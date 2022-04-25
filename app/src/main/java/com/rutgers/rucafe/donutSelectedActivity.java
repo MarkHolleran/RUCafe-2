@@ -34,7 +34,6 @@ public class donutSelectedActivity extends AppCompatActivity {
     private TextView donutToAdd;
     private TextView donutPrice;
     private Spinner donutOrderQuantity;
-    private static final int DEFAULT_SPINNER_SELECTION = 1;
     private static final int ONE_DONUT_TO_BE_ADDED = 1;
     private static final int SPINNER_OFFSET = 1;
     private static final Integer[] ITEMS = {1,2,3,4,5,6,7,8,9,10,11,12};
@@ -62,7 +61,6 @@ public class donutSelectedActivity extends AppCompatActivity {
         Integer[] items = ITEMS;
         ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
         donutOrderQuantity.setAdapter(adapter);
-        //donutOrderQuantity.setSelection(DEFAULT_SPINNER_SELECTION);
         donutToAdd.setText(getIntent().getStringExtra("DONUTFLAVORSELECTED")
                 + "\n" +getIntent().getStringExtra("DONUTTYPESELECTED"));
     }

@@ -19,18 +19,15 @@ public class Coffee extends MenuItem implements Customizable {
     public static final double PRICE_OF_SINGLE_ADDIN = .30;
     public static final double COFFEE_ADDINS_QUANTITY_THRESHOLD = 0;
     public static final double COFFEE_QUANTITY_THRESHOLD = 1;
-
     public static final String SHORT = "Short";
     public static final String TALL = "Tall";
     public static final String GRANDE = "Grande";
     public static final String VENTI = "Venti";
-
     public static final String CREAM = "Cream";
     public static final String SYRUP = "Syrup";
     public static final String CARAMEL = "Caramel";
     public static final String WHIPPEDCREAM = "Whipped Cream";
     public static final String MILK = "Milk";
-
     private ArrayList<String> addins;
     private String size = null;
 
