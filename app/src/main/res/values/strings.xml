@@ -67,6 +67,8 @@
     <string name="add">Add</string>
     <string name="coffee_bean_image">coffee bean image</string>
     <string name="coffee_bean_image_but_flipped">coffee bean image but flipped</string>
+    <string name="placeholdertext">placeholdertext</string>
+    <string name="generic_donut_image">generic donut image</string>
 
     <string-array name="donut_names">
         <item>Double Chocolate</item>

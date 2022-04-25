@@ -49,6 +49,7 @@
         android:layout_marginStart="128dp"
         android:layout_marginTop="32dp"
         android:text="@string/sub_total"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donutListView"
